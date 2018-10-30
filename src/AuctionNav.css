@@ -1,0 +1,16 @@
+#submit-button {
+  border: none;
+  outline: none;
+}
+
+#item:focus {
+  color: orange;
+}
+
+#item:hover {
+  background-color: orange;
+}
+
+#basic-nav-dropdown:hover {
+  background-color: orange;
+}
