@@ -1,0 +1,7 @@
+#hello-world {
+  color: white;
+}
+
+#hello-world:hover {
+  color: palevioletred;
+}

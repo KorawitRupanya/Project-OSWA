@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AuctionNav from "./AuctionNav.js";
+import ProductCard from "./ProductCard.js";
 import { Grid, Row, Col } from "react-bootstrap";
 import "../css/App.css";
 
@@ -16,6 +17,7 @@ class App extends Component {
               </Col>
               <Col xs={12} md={10}>
                 <p id="paragraph">For auction product card</p>
+                <ProductCard />
               </Col>
             </Row>
           </Grid>
