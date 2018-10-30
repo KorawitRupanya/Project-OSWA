@@ -14,5 +14,5 @@ ID           |           Name           |               Roles
 6010545684   |   Korawit Rupanya        |  Scrum Master, Full Stack Developer
 6010546915   |   Gunthee Tawewatmongkol |  Backend-developer
 601054       |   Sorawit Tantharatana   |  Frontend-developer
-601054       |   Pornpavee Seri-umnouy  |  Backend-developer   
+6010545056   |   Pornpavee Seri-umnouy  |  Backend-developer   
 
