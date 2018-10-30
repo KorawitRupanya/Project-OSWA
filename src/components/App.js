@@ -11,10 +11,10 @@ class App extends Component {
         <body>
           <Grid fluid>
             <Row className="show-grid">
-              <Col id="first-col" xs={6} md={3}>
+              <Col id="first-col" xs={6} md={2}>
                 <strong>For side nav-bar</strong>
               </Col>
-              <Col xs={12} md={9}>
+              <Col xs={12} md={10}>
                 <p id="paragraph">For auction product card</p>
               </Col>
             </Row>
