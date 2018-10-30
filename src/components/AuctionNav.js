@@ -9,7 +9,7 @@ import {
   FormControl,
   Button
 } from "react-bootstrap";
-import "./AuctionNav.css";
+import "../css/AuctionNav.css";
 
 class AuctionNav extends Component {
   render() {
@@ -33,7 +33,9 @@ class AuctionNav extends Component {
               Auction history
             </NavItem>
             <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1}>Feature1</MenuItem>
+              <MenuItem id="item" eventKey={3.1}>
+                Feature1
+              </MenuItem>
               <MenuItem eventKey={3.2}>Feature2</MenuItem>
               <MenuItem eventKey={3.3}>Feature3</MenuItem>
               <MenuItem divider />

@@ -3,12 +3,21 @@
   outline: none;
 }
 
+#search-area {
+  border: none;
+  outline: none;
+}
+
 #item:focus {
   color: orange;
 }
 
 #item:hover {
   background-color: orange;
+}
+
+#basic-nav-dropdown:focus {
+  color: orange;
 }
 
 #basic-nav-dropdown:hover {
