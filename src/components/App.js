@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import AuctionNav from "./AuctionNav.js";
-import ProductCardTemplate from "./ProductCardTemplate.js";
+import AuctionNav from "./AuctionNav";
+import ProductCardTemplate from "./ProductCardTemplate";
+import AllProductCard from "./AllProductCard";
+
 import { Grid, Row, Col } from "react-bootstrap";
 import "../css/App.css";
 
@@ -16,11 +18,11 @@ class App extends Component {
                 <strong>For side nav-bar</strong>
               </Col>
               <Col xs={12} md={10}>
-                <p id="paragraph">For auction product card</p>
-                <ProductCardTemplate />
+                <AllProductCard />
               </Col>
             </Row>
           </Grid>
+          
         </body>
       </div>
     );
