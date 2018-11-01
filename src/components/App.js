@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import AuctionNav from "./AuctionNav";
-import AuctionPage from "./AuctionPageTemplate";
+import AuctionPageTemplate from "./AuctionPageTemplate";
 import { Grid, Row, Col } from "react-bootstrap";
 import "../css/App.css";
-import AuctionPageTemplate from "./AuctionPageTemplate";
 
 class App extends Component {
   render() {
@@ -12,14 +11,12 @@ class App extends Component {
         <AuctionNav role="navigation" />
         <body>
           <Grid fluid>
-            <Row className="show-grid">
-              <Col id="first-col" xs={6} md={2}>
-                <strong>For side nav-bar</strong>
-              </Col>
-              <Col xs={12} md={10}>
-                <AuctionPageTemplate />
-              </Col>
-            </Row>
+            <Col id="first-col" xs={6} md={2}>
+              <strong>For side nav-bar</strong>
+            </Col>
+            <Col xs={12} md={10}>
+              <AuctionPageTemplate />
+            </Col>
           </Grid>
         </body>
       </div>
