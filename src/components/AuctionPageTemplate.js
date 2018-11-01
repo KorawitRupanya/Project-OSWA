@@ -8,11 +8,9 @@ class AuctionPageTemplate extends Component {
   render() {
     return (
       <div className="Auction-page">
-        <Row className="show-grid">
-          <Col id="image-slideshow" md={4}>
-            <ImageSlideshow />
-          </Col>
-        </Row>
+        <Col id="image-slideshow" md={4} style={{ "margin-left": "20px" }}>
+          <ImageSlideshow />
+        </Col>
       </div>
     );
   }

@@ -11,12 +11,14 @@ class App extends Component {
         <AuctionNav role="navigation" />
         <body>
           <Grid fluid>
-            <Col id="first-col" xs={6} md={2}>
-              <strong>For side nav-bar</strong>
-            </Col>
-            <Col xs={12} md={10}>
-              <AuctionPageTemplate />
-            </Col>
+            <Row className="show-grid">
+              <Col id="first-col" xs={6} md={2}>
+                <strong>For side nav-bar</strong>
+              </Col>
+              <Col xs={12} md={10}>
+                <AuctionPageTemplate />
+              </Col>
+            </Row>
           </Grid>
         </body>
       </div>
