@@ -8,12 +8,15 @@
 }
 
 #current-winner {
-  width: 220px;
-  height: 15px;
-  color: #303030;
+  color: orange;
   font-size: 18px;
-  text-align: left;
-  margin-left: 15px;
-  margin-top: 10px;
-  padding: 20px;
+  margin-left: 1px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#bid-btn {
+  border: none;
+  outline: none;
+  margin-top: 15px;
 }
