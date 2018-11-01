@@ -25,12 +25,16 @@
 }
 
 #product-card{
-  margin-right: 30px;
+  /* margin-right: 5px; */
   text-align: left;
 }
 
 .fit-picture{
   width:150px;
   height:150px;
+}
+
+#product-card-caption {
+  margin-top:5px;
 }
 

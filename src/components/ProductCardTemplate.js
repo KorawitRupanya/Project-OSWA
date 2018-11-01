@@ -10,7 +10,7 @@ class ProductCardTemplate extends Component {
     return (
       <Col id="product-card" xs={4} md={3}>
       <Thumbnail src={pic}>
-        <h3>Watch</h3>
+        <h3 className = "product-card-caption">Watch</h3>
         <p>Bidding Today at 15:00</p>
         <p>
           <Button bsStyle="primary">Learn more</Button>
