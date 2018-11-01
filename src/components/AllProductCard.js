@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import ProductCardTemplate from "./ProductCardTemplate";
 import { Grid, Row, Col, Button } from "react-bootstrap";
-import "../css/AllProductCard.css"
+import "../css/AllProductCard.css";
 
 class AllProductCard extends Component {
   render() {
     return (
-      <Grid>
+      <Grid fluid>
         <Button id="add-btn" bsStyle="warning">
           <strong>ADD</strong>
         </Button>
@@ -18,7 +18,7 @@ class AllProductCard extends Component {
           <ProductCardTemplate />
           <ProductCardTemplate />
           <ProductCardTemplate />
-          <ProductCardTemplate /> 
+          <ProductCardTemplate />
           <ProductCardTemplate />
           <ProductCardTemplate />
           <ProductCardTemplate />
