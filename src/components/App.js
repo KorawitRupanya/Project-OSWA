@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import AuctionNav from "./AuctionNav.js";
+import AuctionNav from "./AuctionNav";
+import AuctionPage from "./AuctionPageTemplate";
 import { Grid, Row, Col } from "react-bootstrap";
 import "../css/App.css";
+import AuctionPageTemplate from "./AuctionPageTemplate";
 
 class App extends Component {
   render() {
@@ -15,7 +17,7 @@ class App extends Component {
                 <strong>For side nav-bar</strong>
               </Col>
               <Col xs={12} md={10}>
-                <p id="paragraph">For auction product card</p>
+                <AuctionPageTemplate />
               </Col>
             </Row>
           </Grid>
