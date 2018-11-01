@@ -1,3 +1,15 @@
 #bidding-detail {
   margin-top: 20px;
 }
+
+#image-slideshow {
+  margin-left: 20px;
+}
+
+#main-card {
+  width: 900px;
+  margin-left: 40px;
+  margin-top: 20px;
+  background: -webkit-linear-gradient(#272625, #272625);
+  border-color: orange;
+}

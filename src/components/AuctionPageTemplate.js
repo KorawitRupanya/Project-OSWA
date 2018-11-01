@@ -1,18 +1,26 @@
 import React, { Component } from "react";
 import ImageSlideshow from "./ImageSlideshow";
-import { Col, Alert } from "react-bootstrap";
+import { Col, Well, Row } from "react-bootstrap";
 import "../css/AuctionPageTemplate.css";
 
 class AuctionPageTemplate extends Component {
   render() {
     return (
       <div className="Auction-page">
-        <Col id="image-slideshow" md={4} style={{ "margin-left": "20px" }}>
-          <ImageSlideshow />
-        </Col>
-        <Col id="bidding-detail" md={6}>
-          <Alert bsStyle="warning" />
-        </Col>
+        <Well id="main-card">
+          <Row>
+            <Col id="image-slideshow" md={4}>
+              <ImageSlideshow />
+            </Col>
+            <Col id="bidding-detail" md={5} style={{ color: "white" }}>
+              <p>Bananaaaaaaaaaaaaaaa</p>
+              <p>Bananaaaaaaaaaaaaaaa</p>
+              <p>Bananaaaaaaaaaaaaaaa</p>
+              <p>Bananaaaaaaaaaaaaaaa</p>
+              <p>Bananaaaaaaaaaaaaaaa</p>
+            </Col>
+          </Row>
+        </Well>
       </div>
     );
   }

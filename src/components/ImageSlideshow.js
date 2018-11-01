@@ -19,15 +19,12 @@ class ImageSlideshow extends Component {
       <Slide {...properties} style={{ "margin-top": "20px" }}>
         <div className="each-slide">
           <img src={slideImages[0]} alt="hamster1" />
-          <span>pic1</span>
         </div>
         <div className="each-slide">
           <img src={slideImages[1]} alt="hamster2" />
-          <span>pic2</span>
         </div>
         <div className="each-slide">
           <img src={slideImages[2]} alt="hamster3" />
-          <span>pic3</span>
         </div>
       </Slide>
     );
