@@ -6,7 +6,7 @@ import {
   Modal,
   OverlayTrigger
 } from "react-bootstrap";
-import "../css/AllProductCard.css";
+import "../css/AddBtn.css";
 
 class AddBtn extends Component {
   constructor(props, context) {
@@ -39,10 +39,10 @@ class AddBtn extends Component {
     return (
       <div>
         <Button
+          id="main-btn"
           bsStyle="primary"
           bsSize="large"
           onClick={this.handleShow}
-          style={{ "margin-bottom": "20px" }}
         >
           Launch demo modal
         </Button>
