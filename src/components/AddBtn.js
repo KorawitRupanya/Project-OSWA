@@ -40,11 +40,11 @@ class AddBtn extends Component {
       <div>
         <Button
           id="main-btn"
-          bsStyle="primary"
+          bsStyle="warning"
           bsSize="large"
           onClick={this.handleShow}
         >
-        Add
+          Add
         </Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
