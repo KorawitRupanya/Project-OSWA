@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import AuctionNav from "./AuctionNav";
-import ProductCardTemplate from "./ProductCardTemplate";
 import AllProductCard from "./AllProductCard";
 
 import { Grid, Row, Col } from "react-bootstrap";

@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import ProductCardTemplate from "./ProductCardTemplate";
-import { Grid, Row, Col, Button } from "react-bootstrap";
+import AddBtn from "./AddBtn";
+import { Grid, Row } from "react-bootstrap";
 import "../css/AllProductCard.css";
 
 class AllProductCard extends Component {
   render() {
     return (
       <Grid fluid>
-        <Button id="add-btn" bsStyle="warning">
-          <strong>ADD</strong>
-        </Button>
+        <AddBtn />
         <Row className="show-grid">
           <ProductCardTemplate />
           <ProductCardTemplate />
