@@ -44,7 +44,7 @@ class AddBtn extends Component {
           bsSize="large"
           onClick={this.handleShow}
         >
-          Launch demo modal
+        Add
         </Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
