@@ -1,0 +1,36 @@
+#hello-world {
+  color: white;
+}
+
+#hello-world:hover {
+  color: palevioletred;
+}
+
+#myCard {
+  width: 200px;
+  height: 290px;
+  font-size: 12px;
+  padding: 5px;
+  text-align: center;
+}
+
+#time{
+  margin-top: 10px;
+}
+
+#bualoay {
+  width: 180px;
+  height: 35px;
+  font-size:10px;
+}
+
+#product-card{
+  margin-right: 30px;
+  text-align: left;
+}
+
+.fit-picture{
+  width:150px;
+  height:150px;
+}
+
