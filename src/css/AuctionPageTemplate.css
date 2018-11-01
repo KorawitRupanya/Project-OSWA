@@ -1,5 +1,5 @@
 #bidding-detail {
-  margin-top: 20px;
+  color: white;
 }
 
 #image-slideshow {
@@ -10,6 +10,17 @@
   width: 900px;
   margin-left: 40px;
   margin-top: 20px;
-  background: -webkit-linear-gradient(#272625, #272625);
+  background: -webkit-linear-gradient(#20201f, #20201f);
   border-color: orange;
+}
+
+#product-name {
+  color: orange;
+  margin-bottom: 30px;
+}
+
+.vl {
+  margin-left: 20px;
+  border-left: 1px solid orange;
+  height: 300px;
 }

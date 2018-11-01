@@ -1,0 +1,19 @@
+#current-time {
+  font-size: 24px;
+  color: pink;
+}
+
+#current-bid {
+  font-size: 24px;
+}
+
+#current-winner {
+  width: 220px;
+  height: 15px;
+  color: #303030;
+  font-size: 18px;
+  text-align: left;
+  margin-left: 15px;
+  margin-top: 10px;
+  padding: 20px;
+}

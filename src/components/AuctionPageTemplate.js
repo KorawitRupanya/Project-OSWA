@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import ImageSlideshow from "./ImageSlideshow";
 import { Col, Well, Row } from "react-bootstrap";
+import ImageSlideshow from "./ImageSlideshow";
+import BiddingDetail from "./BiddingDetail";
 import "../css/AuctionPageTemplate.css";
 
 class AuctionPageTemplate extends Component {
@@ -12,12 +13,12 @@ class AuctionPageTemplate extends Component {
             <Col id="image-slideshow" md={4}>
               <ImageSlideshow />
             </Col>
-            <Col id="bidding-detail" md={5} style={{ color: "white" }}>
-              <p>Bananaaaaaaaaaaaaaaa</p>
-              <p>Bananaaaaaaaaaaaaaaa</p>
-              <p>Bananaaaaaaaaaaaaaaa</p>
-              <p>Bananaaaaaaaaaaaaaaa</p>
-              <p>Bananaaaaaaaaaaaaaaa</p>
+            <Col md={1}>
+              <div class="vl" />
+            </Col>
+            <Col id="bidding-detail" md={4}>
+              <h1 id="product-name">Product's name</h1>
+              <BiddingDetail />
             </Col>
           </Row>
         </Well>
