@@ -36,3 +36,9 @@
   height: 40px;
 }
 
+#input-bidding-price-area {
+  width: 450px;
+  height: 40px;
+  border: none;
+  outline: none;
+}
