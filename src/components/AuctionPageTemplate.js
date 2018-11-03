@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Col, Well, Row } from "react-bootstrap";
 import ImageSlideshow from "./ImageSlideshow";
 import BiddingDetail from "./BiddingDetail";
+import BiddingPriceBox from "./BiddingPriceBox";
 import "../css/AuctionPageTemplate.css";
 
 class AuctionPageTemplate extends Component {
@@ -20,6 +21,11 @@ class AuctionPageTemplate extends Component {
               <h1 id="product-name">Product's name</h1>
               <BiddingDetail />
             </Col>
+          </Row>
+        </Well>
+        <Well id="bidding-price-box">
+          <Row>
+            <BiddingPriceBox />
           </Row>
         </Well>
       </div>
