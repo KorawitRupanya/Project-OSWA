@@ -20,3 +20,18 @@
   outline: none;
   margin-top: 15px;
 }
+
+#suggest-price {
+  padding: 10px;
+  color: orange;
+  font-size: 18px;
+}
+
+#bid-price-control-btn {
+  outline: none;
+}
+
+#bid-price-control-btn:hover {
+  color: orange;
+  border-color: orange;
+}
