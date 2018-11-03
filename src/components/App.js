@@ -12,11 +12,14 @@ class App extends Component {
         <body>
           <Grid fluid>
             <Row className="show-grid">
-              <Col id="first-col" xs={6} md={2}>
+              <Col id="first-col" md={2}>
                 <strong>For side nav-bar</strong>
               </Col>
-              <Col xs={12} md={10}>
+              <Col md={8}>
                 <AuctionPageTemplate />
+              </Col>
+              <Col md={2}>
+                <strong style={{ color: "orange" }}>For ad?</strong>
               </Col>
             </Row>
           </Grid>
