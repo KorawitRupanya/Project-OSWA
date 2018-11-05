@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "oswa-project",
   "version": "0.1.0",
   "private": true,
@@ -12,16 +11,6 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.5"
-=======
-  "name": "test-app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.6.0",
-    "react-bootstrap": "^0.32.4",
-    "react-dom": "^16.6.0",
-    "react-scripts": "2.1.0"
->>>>>>> component/auction-product-card
   },
   "scripts": {
     "start": "react-scripts start",
@@ -29,12 +18,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-<<<<<<< HEAD
   "eslintConfig": {
     "extends": "react-app"
   },
-=======
->>>>>>> component/auction-product-card
   "browserslist": [
     ">0.2%",
     "not dead",
