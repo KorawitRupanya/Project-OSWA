@@ -3,6 +3,7 @@ import { Col, Well, Row } from "react-bootstrap";
 import ImageSlideshow from "./ImageSlideshow";
 import BiddingDetail from "./BiddingDetail";
 import BiddingPriceBox from "./BiddingPriceBox";
+import ProductDetail from "./ProductDetail";
 import "../css/AuctionPageTemplate.css";
 
 class AuctionPageTemplate extends Component {
@@ -17,7 +18,7 @@ class AuctionPageTemplate extends Component {
             <Col md={1}>
               <div class="vl" />
             </Col>
-            <Col id="bidding-detail" md={4}>
+            <Col id="bidding-detail" md={6}>
               <h1 id="product-name">Product's name</h1>
               <BiddingDetail />
             </Col>
@@ -26,6 +27,11 @@ class AuctionPageTemplate extends Component {
         <Well id="bidding-price-box">
           <Row>
             <BiddingPriceBox />
+          </Row>
+        </Well>
+        <Well id="product-detail">
+          <Row>
+            <ProductDetail />
           </Row>
         </Well>
       </div>

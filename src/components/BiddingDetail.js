@@ -33,26 +33,24 @@ class BiddingDetail extends Component {
   render() {
     return (
       <div>
-        <Row>
-          <Col md={6}>
+        <Row style={{ "text-align": "left" }}>
+          <Col md={4}>
             <small>Ends In:</small>
             <br />
             <strong id="current-time">00:14:36</strong>
           </Col>
-          <Col md={6}>
+          <Col md={8}>
             <small>Current Bid:</small>
             <br />
             <strong id="current-bid">250 THB</strong>
           </Col>
         </Row>
         <Row id="current-winner">
-          <div>
-            <img id="crown-pic" src={crown} alt="crown" />
-            username.123
-          </div>
+          <img id="crown-pic" src={crown} alt="crown" />
+          username.123
         </Row>
         <Row>
-          <Col md={7}>
+          <Col md={4} style={{ "text-align": "left", "margin-left": "5px" }}>
             <small>Place Your Bid:</small>
             <br />
             <div bidding-price-set>

@@ -26,6 +26,16 @@
 #product-name {
   color: orange;
   margin-bottom: 30px;
+  text-align: left;
+}
+
+#product-detail {
+  width: 900px;
+  margin-left: 40px;
+  background: -webkit-linear-gradient(#20201f, #20201f);
+  border-color: orange;
+  color: white;
+  text-align: left;
 }
 
 .vl {

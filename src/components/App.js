@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AuctionNav from "./AuctionNav";
 import AuctionPageTemplate from "./AuctionPageTemplate";
+import AllProductCard from "./AllProductCard";
 import { Grid, Row, Col } from "react-bootstrap";
 import "../css/App.css";
 
@@ -15,7 +16,7 @@ class App extends Component {
               <Col id="first-col" md={2}>
                 <strong>For side nav-bar</strong>
               </Col>
-              <Col md={8}>
+              <Col id="second-col" md={8}>
                 <AuctionPageTemplate />
               </Col>
               <Col md={2}>
