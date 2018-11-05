@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class ProductDetail extends Component {
   render() {
     return (
-      <div style={{ "margin-left": "30px" }}>
+      <div style={{ marginLeft: "30px" }}>
         <h2 style={{ color: "orange" }}>Product detail</h2>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting

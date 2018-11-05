@@ -16,7 +16,7 @@ class ImageSlideshow extends Component {
       arrows: true
     };
     return (
-      <Slide {...properties} style={{ "margin-top": "20px" }}>
+      <Slide {...properties} style={{ marginTop: "20px" }}>
         <div className="each-slide">
           <img src={slideImages[0]} alt="hamster1" />
         </div>

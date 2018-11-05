@@ -114,7 +114,7 @@ class AddBtn extends Component {
                     <Col md={2}>
                       <input type="file" onChange={this.fileHolder} />{" "}
                     </Col>
-                    <Col md={3} style={{ "margin-left": "250px" }}>
+                    <Col md={3} style={{ marginLeft: "250px" }}>
                       <Button onClick={this.fileHolder} id="upload-button">
                         Upload
                       </Button>

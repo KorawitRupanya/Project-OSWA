@@ -33,7 +33,7 @@ class BiddingDetail extends Component {
   render() {
     return (
       <div>
-        <Row style={{ "text-align": "left" }}>
+        <Row style={{ textAlign: "left" }}>
           <Col md={4}>
             <small>Ends In:</small>
             <br />
@@ -50,7 +50,7 @@ class BiddingDetail extends Component {
           username.123
         </Row>
         <Row>
-          <Col md={4} style={{ "text-align": "left", "margin-left": "5px" }}>
+          <Col md={4} style={{ textAlign: "left", marginLeft: "5px" }}>
             <small>Place Your Bid:</small>
             <br />
             <div bidding-price-set>
