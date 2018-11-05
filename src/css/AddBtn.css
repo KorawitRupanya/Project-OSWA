@@ -1,0 +1,44 @@
+#main-btn {
+  width: 800px;
+  margin-bottom: 20px;
+  border: none;
+  outline: none;
+}
+
+#input-name-area {
+  width: 450px;
+  border: none;
+  outline: none;
+}
+
+#input-details-area {
+  width: 450px;
+  height: 100px;
+  border: none;
+  outline: none;
+}
+
+#input-time-area {
+  width: 450px;
+  height: 40px;
+  border: none;
+  outline: none;
+}
+
+#insert-photo-area {
+  width: 450px;
+  border: none;
+  outline: none;
+}
+
+#upload-button {
+  width: 80px;
+  height: 40px;
+}
+
+#input-bidding-price-area {
+  width: 450px;
+  height: 40px;
+  border: none;
+  outline: none;
+}
