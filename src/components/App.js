@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import AuctionNav from "./AuctionNav";
 import AllProductCard from "./AllProductCard";
-
 import { Grid, Row, Col } from "react-bootstrap";
 import "../css/App.css";
 
