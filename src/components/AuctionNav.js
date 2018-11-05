@@ -42,22 +42,20 @@ class AuctionNav extends Component {
               <MenuItem eventKey={3.3}>Separated Feature</MenuItem>
             </NavDropdown>
           </Nav>
-          <Nav pullRight>
-            <Navbar.Collapse>
-              <Navbar.Form pullLeft>
-                <FormGroup>
-                  <FormControl
-                    id="search-area"
-                    type="text"
-                    placeholder="Search"
-                  />
-                </FormGroup>{" "}
-                <Button id="submit-button" type="submit" bsStyle="warning">
-                  Submit
-                </Button>
-              </Navbar.Form>
-            </Navbar.Collapse>
-          </Nav>
+          <Navbar.Collapse>
+            <Navbar.Form pullRight>
+              <FormGroup>
+                <FormControl
+                  id="search-area"
+                  type="text"
+                  placeholder="Search"
+                />
+              </FormGroup>{" "}
+              <Button id="submit-button" type="submit" bsStyle="warning">
+                Submit
+              </Button>
+            </Navbar.Form>
+          </Navbar.Collapse>
         </Navbar.Collapse>
       </Navbar>
     );

@@ -2,12 +2,10 @@ import React, { Component } from "react";
 import {
   Popover,
   Button,
-  Tooltip,
   Modal,
   OverlayTrigger,
   Navbar,
   FormControl,
-  FormGroup,
   Row,
   Col
 } from "react-bootstrap";
@@ -52,7 +50,6 @@ class AddBtn extends Component {
         mollit anim id est laborum.
       </Popover>
     );
-    const tooltip = <Tooltip id="modal-tooltip">wow.</Tooltip>;
 
     return (
       <div>
