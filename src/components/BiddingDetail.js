@@ -4,11 +4,12 @@ import crown from "../pictures/crown.png";
 import "../css/BiddingDetail.css";
 
 class BiddingDetail extends Component {
-  constructor(startPrice, biddingPrice) {
+  constructor(startPrice, biddingPrice, biddingTime) {
     super();
     this.state = {
       suggest_price: 10, //startPrice
-      bidding_price: 5 //biddingPrice
+      bidding_price: 5, //biddingPrice
+      bidding_time: 15 //biddingTime
     };
   }
 
@@ -50,7 +51,7 @@ class BiddingDetail extends Component {
           username.123
         </Row>
         <Row>
-          <Col md={4} style={{ textAlign: "left", marginLeft: "5px" }}>
+          <Col md={5} style={{ textAlign: "left", marginLeft: "5px" }}>
             <small>Place Your Bid:</small>
             <br />
             <div bidding-price-set>
