@@ -16,7 +16,7 @@ class AuctionPageTemplate extends Component {
               <ImageSlideshow />
             </Col>
             <Col md={1}>
-              <div class="vl" />
+              <div className="vl" />
             </Col>
             <Col id="bidding-detail" md={6}>
               <h1 id="product-name">Product's name</h1>

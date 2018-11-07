@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col, Button } from "react-bootstrap";
 import crown from "../pictures/crown.png";
+import Timer from "./Timer";
 import "../css/BiddingDetail.css";
 
 class BiddingDetail extends Component {
@@ -54,7 +55,7 @@ class BiddingDetail extends Component {
           <Col md={5} style={{ textAlign: "left", marginLeft: "5px" }}>
             <small>Place Your Bid:</small>
             <br />
-            <div bidding-price-set>
+            <div id="bidding-price-set">
               <Button
                 id="bid-price-control-btn"
                 onClick={this.onClickDecreaseButton}

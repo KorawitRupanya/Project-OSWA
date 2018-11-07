@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import AuctionNav from "./AuctionNav";
 import AuctionPageTemplate from "./AuctionPageTemplate";
 import AllProductCard from "./AllProductCard";
-import Timer from "./Timer";
 import { Grid, Row, Col } from "react-bootstrap";
 import "../css/App.css";
 
@@ -17,7 +16,7 @@ class App extends Component {
               <strong>For side nav-bar</strong>
             </Col>
             <Col id="second-col" md={8}>
-              <Timer />
+              <AuctionPageTemplate />
             </Col>
             <Col md={2}>
               <strong style={{ color: "orange" }}>For ad?</strong>
