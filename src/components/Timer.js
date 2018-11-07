@@ -91,21 +91,18 @@ class TimerBox extends Component {
   }
 
   handleChangeHr(event) {
-    console.log("event-hr: " + event.target.value);
     this.setState({
       hour: event.target.value
     });
   }
 
   handleChangeMin(event) {
-    console.log("event-min: " + event.target.value);
     this.setState({
       minutes: event.target.value
     });
   }
 
   handleChangeSec(event) {
-    console.log("event-sec: " + event.target.value);
     this.setState({
       seconds: event.target.value
     });
@@ -115,11 +112,6 @@ class TimerBox extends Component {
     var hour = Math.floor(this.secondsRemaining / 3600);
     var min = Math.floor((this.secondsRemaining - hour * 3600) / 60);
     var sec = this.secondsRemaining - (hour * 3600 + min * 60);
-
-    console.log("seconds remain: " + this.secondsRemaining);
-    console.log("hr: " + hour);
-    console.log("min: " + min);
-    console.log("sec: " + sec);
 
     this.setState({
       hour: hour,
@@ -164,15 +156,6 @@ class TimerBox extends Component {
     let m = this.state.minutes * 60;
     let s = this.state.seconds * 1;
     this.secondsRemaining = hr + m + s - 1;
-
-    console.log("st-second remaining: " + this.secondsRemaining);
-    console.log("state-hr: " + this.state.hour);
-    console.log("state-min: " + this.state.minutes);
-    console.log("state-sec: " + this.state.seconds);
-
-    console.log("st-hr: " + hr);
-    console.log("st-min: " + m);
-    console.log("st-sec: " + s);
 
     this.setState({
       isClicked: true
