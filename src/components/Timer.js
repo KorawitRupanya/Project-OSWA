@@ -91,23 +91,23 @@ class TimerBox extends Component {
   }
 
   handleChangeHr(event) {
-    console.log("event-hr: " + event.target.hour);
+    console.log("event-hr: " + event.target.value);
     this.setState({
-      hour: event.target.hour
+      hour: event.target.value
     });
   }
 
   handleChangeMin(event) {
-    console.log("event-min: " + event.target.minutes);
+    console.log("event-min: " + event.target.value);
     this.setState({
-      minutes: event.target.minutes
+      minutes: event.target.value
     });
   }
 
   handleChangeSec(event) {
-    console.log("event-sec: " + event.target.seconds);
+    console.log("event-sec: " + event.target.value);
     this.setState({
-      seconds: event.target.seconds
+      seconds: event.target.value
     });
   }
 
@@ -135,7 +135,7 @@ class TimerBox extends Component {
 
     if (min < 10) {
       this.setState({
-        hour: "0" + this.state.min
+        minutes: "0" + this.state.min
       });
     }
 
@@ -159,16 +159,21 @@ class TimerBox extends Component {
   }
 
   startCountDown() {
+    this.intervalHandle = setInterval(this.tick, 1000);
     let hr = this.state.hour * 3600;
     let m = this.state.minutes * 60;
-    let s = this.state.seconds;
-
-    console.log("st-hr: " + this.state.hour);
-    console.log("st-min: " + this.state.min);
-    console.log("st-sec: " + this.state.sec);
-
+    let s = this.state.seconds * 1;
     this.secondsRemaining = hr + m + s - 1;
-    this.intervalHandle = setInterval(this.tick, 1000);
+
+    console.log("st-second remaining: " + this.secondsRemaining);
+    console.log("state-hr: " + this.state.hour);
+    console.log("state-min: " + this.state.minutes);
+    console.log("state-sec: " + this.state.seconds);
+
+    console.log("st-hr: " + hr);
+    console.log("st-min: " + m);
+    console.log("st-sec: " + s);
+
     this.setState({
       isClicked: true
     });
