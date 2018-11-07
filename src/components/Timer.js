@@ -1,17 +1,40 @@
 import React, { Component } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Col } from "react-bootstrap";
 
 class TimerInput extends Component {
   render() {
     return (
       <div style={{ marginLeft: 100 }}>
-        <h3>Input your desired time</h3>
-        <input
-          type="number"
-          value={this.props.value}
-          onChange={this.props.handleChange}
-          required
-        />
+        <Col md={1}>
+          <h4 style={{ color: "white" }}>hr</h4>
+          <input
+            style={{ width: "50px" }}
+            type="number"
+            hour={this.props.hour}
+            onChange={this.props.handleChangeHr}
+            required
+          />
+        </Col>
+        <Col md={1}>
+          <h4 style={{ color: "white" }}>min</h4>
+          <input
+            style={{ width: "50px" }}
+            type="number"
+            minutes={this.props.minutes}
+            onChange={this.props.handleChangeMin}
+            required
+          />
+        </Col>
+        <Col md={1}>
+          <h4 style={{ color: "white" }}>sec</h4>
+          <input
+            style={{ width: "50px" }}
+            type="number"
+            seconds={this.props.seconds}
+            onChange={this.props.handleChangeSec}
+            required
+          />
+        </Col>
       </div>
     );
   }
@@ -22,7 +45,7 @@ class Timer extends Component {
     return (
       <div>
         <strong style={{ fontSize: 24, marginLeft: 100, color: "pink" }}>
-          {this.props.value}:{this.props.minutes}:{this.props.seconds}
+          {this.props.hour}:{this.props.minutes}:{this.props.seconds}
         </strong>
       </div>
     );
@@ -35,7 +58,11 @@ class StartButton extends Component {
       <div style={{ marginLeft: 130 }}>
         <Button
           className="warning"
-          disabled={!this.props.value}
+          disabled={
+            this.props.hour === "" ||
+            this.props.minutes === "" ||
+            this.props.seconds === ""
+          }
           onClick={this.props.startCountDown}
         >
           Start
@@ -49,21 +76,38 @@ class TimerBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      seconds: "00",
-      minutes: "00",
-      value: "",
+      seconds: "",
+      minutes: "",
+      hour: "",
       isClicked: false
     };
     this.secondsRemaining = 0;
     this.intervalHandle = 0;
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeHr = this.handleChangeHr.bind(this);
+    this.handleChangeMin = this.handleChangeMin.bind(this);
+    this.handleChangeSec = this.handleChangeSec.bind(this);
     this.startCountDown = this.startCountDown.bind(this);
     this.tick = this.tick.bind(this);
   }
 
-  handleChange(event) {
+  handleChangeHr(event) {
+    console.log("event-hr: " + event.target.hour);
     this.setState({
-      value: event.target.value
+      hour: event.target.hour
+    });
+  }
+
+  handleChangeMin(event) {
+    console.log("event-min: " + event.target.minutes);
+    this.setState({
+      minutes: event.target.minutes
+    });
+  }
+
+  handleChangeSec(event) {
+    console.log("event-sec: " + event.target.seconds);
+    this.setState({
+      seconds: event.target.seconds
     });
   }
 
@@ -72,8 +116,13 @@ class TimerBox extends Component {
     var min = Math.floor((this.secondsRemaining - hour * 3600) / 60);
     var sec = this.secondsRemaining - (hour * 3600 + min * 60);
 
+    console.log("seconds remain: " + this.secondsRemaining);
+    console.log("hr: " + hour);
+    console.log("min: " + min);
+    console.log("sec: " + sec);
+
     this.setState({
-      value: hour,
+      hour: hour,
       minutes: min,
       seconds: sec
     });
@@ -86,19 +135,19 @@ class TimerBox extends Component {
 
     if (min < 10) {
       this.setState({
-        value: "0" + this.state.min
+        hour: "0" + this.state.min
       });
     }
 
     if (hour === 0) {
       this.setState({
-        value: "00"
+        hour: "00"
       });
     }
 
     if ((hour < 10) & (hour > 0)) {
       this.setState({
-        value: "0" + this.state.value
+        hour: "0" + this.state.hour
       });
     }
 
@@ -110,9 +159,16 @@ class TimerBox extends Component {
   }
 
   startCountDown() {
+    let hr = this.state.hour * 3600;
+    let m = this.state.minutes * 60;
+    let s = this.state.seconds;
+
+    console.log("st-hr: " + this.state.hour);
+    console.log("st-min: " + this.state.min);
+    console.log("st-sec: " + this.state.sec);
+
+    this.secondsRemaining = hr + m + s - 1;
     this.intervalHandle = setInterval(this.tick, 1000);
-    let time = this.state.value;
-    this.secondsRemaining = time * 3600 - 1;
     this.setState({
       isClicked: true
     });
@@ -125,7 +181,7 @@ class TimerBox extends Component {
         <div>
           <div className="row">
             <Timer
-              value={this.state.value}
+              hour={this.state.hour}
               minutes={this.state.minutes}
               seconds={this.state.seconds}
             />
@@ -137,17 +193,23 @@ class TimerBox extends Component {
         <div>
           <div className="row">
             <TimerInput
-              value={this.state.value}
-              handleChange={this.handleChange}
+              hour={this.state.hour}
+              minutes={this.state.minutes}
+              seconds={this.state.seconds}
+              handleChangeHr={this.handleChangeHr}
+              handleChangeMin={this.handleChangeMin}
+              handleChangeSec={this.handleChangeSec}
             />
             <Timer
-              value={this.state.value}
+              hour={this.state.hour}
               minutes={this.state.minutes}
               seconds={this.state.seconds}
             />
             <StartButton
               startCountDown={this.startCountDown}
-              value={this.state.value}
+              hour={this.state.hour}
+              minutes={this.state.minutes}
+              seconds={this.state.seconds}
             />
           </div>
         </div>
