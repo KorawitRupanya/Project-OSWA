@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { Button, Col } from "react-bootstrap";
+import { Button, Col, Row, Grid } from "react-bootstrap";
 
 class TimerInput extends Component {
   render() {
     return (
-      <div style={{ marginLeft: 100 }}>
+      <div>
         <Col md={1}>
-          <h4 style={{ color: "white" }}>hr</h4>
+          <h5 style={{ color: "white" }}>hr</h5>
           <input
             style={{ width: "50px" }}
             type="number"
@@ -16,7 +16,7 @@ class TimerInput extends Component {
           />
         </Col>
         <Col md={1}>
-          <h4 style={{ color: "white" }}>min</h4>
+          <h5 style={{ color: "white" }}>min</h5>
           <input
             style={{ width: "50px" }}
             type="number"
@@ -26,7 +26,7 @@ class TimerInput extends Component {
           />
         </Col>
         <Col md={1}>
-          <h4 style={{ color: "white" }}>sec</h4>
+          <h5 style={{ color: "white" }}>sec</h5>
           <input
             style={{ width: "50px" }}
             type="number"
@@ -43,8 +43,8 @@ class TimerInput extends Component {
 class Timer extends Component {
   render() {
     return (
-      <div>
-        <strong style={{ fontSize: 24, marginLeft: 100, color: "pink" }}>
+      <div style={{ marginLeft: "110px" }}>
+        <strong style={{ fontSize: 36, color: "pink" }}>
           {this.props.hour}:{this.props.minutes}:{this.props.seconds}
         </strong>
       </div>
@@ -55,15 +55,17 @@ class Timer extends Component {
 class StartButton extends Component {
   render() {
     return (
-      <div style={{ marginLeft: 130 }}>
+      <div>
         <Button
-          className="warning"
+          bsStyle="warning"
+          bsSize="large"
           disabled={
             this.props.hour === "" ||
             this.props.minutes === "" ||
             this.props.seconds === ""
           }
           onClick={this.props.startCountDown}
+          style={{ marginTop: "15px" }}
         >
           Start
         </Button>
@@ -155,7 +157,7 @@ class TimerBox extends Component {
     let hr = this.state.hour * 3600;
     let m = this.state.minutes * 60;
     let s = this.state.seconds * 1;
-    this.secondsRemaining = hr + m + s - 1;
+    this.secondsRemaining = hr + m + s;
 
     this.setState({
       isClicked: true
@@ -166,20 +168,20 @@ class TimerBox extends Component {
     const clicked = this.state.isClicked;
     if (clicked) {
       return (
-        <div>
-          <div className="row">
-            <Timer
-              hour={this.state.hour}
-              minutes={this.state.minutes}
-              seconds={this.state.seconds}
-            />
-          </div>
-        </div>
+        <Row
+          style={{ textAlign: "left", marginLeft: "1px", marginTop: "10px" }}
+        >
+          <Timer
+            hour={this.state.hour}
+            minutes={this.state.minutes}
+            seconds={this.state.seconds}
+          />
+        </Row>
       );
     } else {
       return (
-        <div>
-          <div className="row">
+        <Grid>
+          <Row className="show-grid" style={{ textAlign: "left" }}>
             <TimerInput
               hour={this.state.hour}
               minutes={this.state.minutes}
@@ -188,19 +190,14 @@ class TimerBox extends Component {
               handleChangeMin={this.handleChangeMin}
               handleChangeSec={this.handleChangeSec}
             />
-            <Timer
-              hour={this.state.hour}
-              minutes={this.state.minutes}
-              seconds={this.state.seconds}
-            />
             <StartButton
               startCountDown={this.startCountDown}
               hour={this.state.hour}
               minutes={this.state.minutes}
               seconds={this.state.seconds}
             />
-          </div>
-        </div>
+          </Row>
+        </Grid>
       );
     }
   }

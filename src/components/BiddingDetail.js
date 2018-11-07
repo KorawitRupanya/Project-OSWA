@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Row, Col, Button } from "react-bootstrap";
 import crown from "../pictures/crown.png";
-import Timer from "./Timer";
 import "../css/BiddingDetail.css";
 
 class BiddingDetail extends Component {
@@ -35,17 +34,10 @@ class BiddingDetail extends Component {
   render() {
     return (
       <div>
-        <Row style={{ textAlign: "left" }}>
-          <Col md={4}>
-            <small>Ends In:</small>
-            <br />
-            <strong id="current-time">00:14:36</strong>
-          </Col>
-          <Col md={8}>
-            <small>Current Bid:</small>
-            <br />
-            <strong id="current-bid">250 THB</strong>
-          </Col>
+        <Row style={{ textAlign: "left", marginLeft: "5px" }}>
+          <small>Current Bid:</small>
+          <br />
+          <strong id="current-bid">250 THB</strong>
         </Row>
         <Row id="current-winner">
           <img id="crown-pic" src={crown} alt="crown" />

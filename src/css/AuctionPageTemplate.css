@@ -38,6 +38,10 @@
   text-align: left;
 }
 
+#timer {
+  margin-left: 280px;
+}
+
 .vl {
   margin-left: 20px;
   border-left: 1px solid orange;
