@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import AuctionNav from "./AuctionNav";
 import AuctionPageTemplate from "./AuctionPageTemplate";
 import AllProductCard from "./AllProductCard";
+import TimerBox from "./Timer";
 import { Grid, Row, Col } from "react-bootstrap";
 import "../css/App.css";
 
