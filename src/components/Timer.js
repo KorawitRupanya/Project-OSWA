@@ -135,7 +135,7 @@ class TimerBox extends Component {
 
     if (min < 10) {
       this.setState({
-        minutes: "0" + this.state.min
+        minutes: "0" + this.state.minutes
       });
     }
 
