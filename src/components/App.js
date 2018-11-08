@@ -18,7 +18,7 @@ class App extends Component {
               <strong>For side nav-bar</strong>
             </Col>
             <Col id="second-col" md={8}>
-              <AuctionPageTemplate />
+              <AllProductCard />
             </Col>
             <Col md={2}>
               <strong style={{ color: "orange" }}>For ad?</strong>
