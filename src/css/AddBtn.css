@@ -25,6 +25,14 @@
   outline: none;
 }
 
+#input-start-time-area {
+  width: 65px;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin-right: 5px;
+}
+
 #insert-photo-area {
   width: 450px;
   border: none;

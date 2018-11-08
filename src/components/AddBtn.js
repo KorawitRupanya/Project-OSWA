@@ -89,10 +89,21 @@ class AddBtn extends Component {
               </Row>
               <Row>
                 <Navbar.Form>
+                  <p style={{ marginLeft: "5px" }}>Bidding time</p>
                   <FormControl
-                    id="input-time-area"
-                    type="time"
-                    placeholder="bidding time"
+                    id="input-start-time-area"
+                    type="number"
+                    placeholder="hh"
+                  />
+                  <FormControl
+                    id="input-start-time-area"
+                    type="number"
+                    placeholder="mm"
+                  />
+                  <FormControl
+                    id="input-start-time-area"
+                    type="number"
+                    placeholder="ss"
                   />
                 </Navbar.Form>
               </Row>
