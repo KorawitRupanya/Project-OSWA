@@ -198,7 +198,7 @@ class AddBtn extends Component {
                   <FormControl
                     id="input-details-area"
                     type="details"
-                    placeholder="details..."
+                    placeholder="details...(optional)"
                   />
                 </Navbar.Form>
               </Row>
