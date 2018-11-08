@@ -3,6 +3,7 @@ import AuctionNav from "./AuctionNav";
 import AuctionPageTemplate from "./AuctionPageTemplate";
 import AllProductCard from "./AllProductCard";
 import { Grid, Row, Col } from "react-bootstrap";
+import ProfileTemplate from "./profile-template";
 import "../css/App.css";
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
         <Grid fluid>
           <Row className="show-grid">
             <Col id="first-col" md={2}>
+              <ProfileTemplate/>
               <strong>For side nav-bar</strong>
             </Col>
             <Col id="second-col" md={8}>
