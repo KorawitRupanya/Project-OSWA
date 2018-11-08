@@ -10,12 +10,20 @@ class SignInBar extends Component {
       isClicked: false
     };
     this.buttonClicked = this.buttonClicked.bind(this);
+    this.buttonUnClicked = this.buttonUnClicked.bind(this);
   }
 
   buttonClicked() {
     console.log("clicked");
     this.setState({
       isClicked: true
+    });
+  }
+
+  buttonUnClicked(){
+    console.log("not clicked yet")
+    this.setState({
+      isClicked: false
     });
   }
 
@@ -35,7 +43,7 @@ class SignInBar extends Component {
           </p>
           <p>
             <Button bsStyle="primary">Edit Profile</Button>
-            <Button bsStyle="warning" md={10}>
+            <Button bsStyle="warning" md={10} onClick={this.buttonUnClicked}>
               Logout
             </Button>
           </p>
