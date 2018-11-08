@@ -14,14 +14,12 @@ class SignInBar extends Component {
   }
 
   buttonClicked() {
-    console.log("clicked");
     this.setState({
       isClicked: true
     });
   }
 
   buttonUnClicked(){
-    console.log("not clicked yet")
     this.setState({
       isClicked: false
     });
@@ -29,7 +27,6 @@ class SignInBar extends Component {
 
   render() {
     const clicked = this.state.isClicked;
-    console.log(clicked);
     if (clicked) {
       return (
         <div>
