@@ -88,7 +88,9 @@ class AddBtn extends Component {
       minutes: "",
       hour: "",
       startminutes: "",
-      starthour: ""
+      starthour: "",
+      bidding_price: "",
+      product_name: ""
     };
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -97,6 +99,8 @@ class AddBtn extends Component {
     this.handleChangeSec = this.handleChangeSec.bind(this);
     this.handleChangeStartHr = this.handleChangeStartHr.bind(this);
     this.handleChangeStartMin = this.handleChangeStartMin.bind(this);
+    this.handleChangePrice = this.handleChangePrice.bind(this);
+    this.handleChangeName = this.handleChangeName.bind(this);
   }
 
   handleClose() {
@@ -137,6 +141,18 @@ class AddBtn extends Component {
     });
   }
 
+  handleChangePrice(event) {
+    this.setState({
+      bidding_price: event.target.value
+    });
+  }
+
+  handleChangeName(event) {
+    this.setState({
+      product_name: event.target.value
+    });
+  }
+
   render() {
     const popover = (
       <Popover id="modal-popover" title="Terms and conditions">
@@ -173,6 +189,7 @@ class AddBtn extends Component {
                     id="input-name-area"
                     type="name"
                     placeholder="Product Name"
+                    onChange={this.handleChangeName}
                   />
                 </Navbar.Form>
               </Row>
@@ -215,8 +232,9 @@ class AddBtn extends Component {
                 <Navbar.Form>
                   <FormControl
                     id="input-bidding-price-area"
-                    type="text"
+                    type="number"
                     placeholder="bidding price"
+                    onChange={this.handleChangePrice}
                   />
                 </Navbar.Form>
               </Row>
@@ -234,11 +252,14 @@ class AddBtn extends Component {
                           this.state.seconds === "" ||
                           this.state.starthour === "" ||
                           this.startminutes === "" ||
+                          this.state.bidding_price === "" ||
+                          this.state.product_name === "" ||
                           this.state.hour < 0 ||
                           this.state.minutes < 0 ||
                           this.state.seconds < 0 ||
                           this.state.starthour < 0 ||
-                          this.state.startminutes < 0
+                          this.state.startminutes < 0 ||
+                          this.state.bidding_price <= 0
                         }
                         onClick={this.fileHolder}
                         id="upload-button"
