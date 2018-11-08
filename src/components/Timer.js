@@ -62,7 +62,10 @@ class StartButton extends Component {
           disabled={
             this.props.hour === "" ||
             this.props.minutes === "" ||
-            this.props.seconds === ""
+            this.props.seconds === "" ||
+            this.props.hour < 0 ||
+            this.props.minutes < 0 ||
+            this.props.seconds < 0
           }
           onClick={this.props.startCountDown}
           style={{ marginTop: "15px" }}
