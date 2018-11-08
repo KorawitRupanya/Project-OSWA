@@ -9,6 +9,7 @@ import {
   Row,
   Col
 } from "react-bootstrap";
+import StartDatePicker from "./StartDatePicker";
 import "../css/AddBtn.css";
 
 class AddBtn extends Component {
@@ -86,6 +87,29 @@ class AddBtn extends Component {
                     placeholder="details..."
                   />
                 </Navbar.Form>
+              </Row>
+              <Row>
+                <Col md={2}>
+                  <Navbar.Form>
+                    <p style={{ marginLeft: "5px" }}>Start bidding day</p>
+                    <StartDatePicker />
+                  </Navbar.Form>
+                </Col>
+                <Col md={4}>
+                  <Navbar.Form>
+                    <p style={{ marginLeft: "5px" }}>time</p>
+                    <FormControl
+                      id="input-start-time-area"
+                      type="number"
+                      placeholder="hh"
+                    />
+                    <FormControl
+                      id="input-start-time-area"
+                      type="number"
+                      placeholder="mm"
+                    />
+                  </Navbar.Form>
+                </Col>
               </Row>
               <Row>
                 <Navbar.Form>
