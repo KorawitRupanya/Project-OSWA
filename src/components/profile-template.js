@@ -15,13 +15,13 @@ class ProfileTemplate extends Component {
   render() {
     const plate = (
       <Jumbotron id="plate">
-        <img id="image" src={pro} />
+        <img id="image" src={pro} alt={"Profile pictures"} />
         <h3>Name: Hairy Harry</h3>
         <p>
           <li>Member ID :007</li>
           <li>Call :191</li>
           <li>3 Own Auctions</li>
-          <li>5 auctions were Bided </li>
+          <li>5 auctions were Bidded </li>
         </p>
         <p>
           <Button bsStyle="primary">Edit Profile</Button>
