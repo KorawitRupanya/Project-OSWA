@@ -12,6 +12,66 @@ import {
 import StartDatePicker from "./StartDatePicker";
 import "../css/AddBtn.css";
 
+class BiddingTimeInput extends Component {
+  render() {
+    return (
+      <Navbar.Form>
+        <p style={{ marginLeft: "5px" }}>Bidding time</p>
+        <input
+          id="input-start-time-area"
+          type="number"
+          placeholder="hh"
+          hour={this.props.hour}
+          onChange={this.props.handleChangeHr}
+          required
+        />
+        <input
+          id="input-start-time-area"
+          type="number"
+          placeholder="mm"
+          minutes={this.props.minutes}
+          onChange={this.props.handleChangeMin}
+          required
+        />
+        <input
+          id="input-start-time-area"
+          type="number"
+          placeholder="ss"
+          seconds={this.props.seconds}
+          onChange={this.props.handleChangeSec}
+          required
+        />
+      </Navbar.Form>
+    );
+  }
+}
+
+class StartTimeInput extends Component {
+  render() {
+    return (
+      <Navbar.Form>
+        <p style={{ marginLeft: "5px" }}>time</p>
+        <input
+          id="input-start-time-area"
+          type="number"
+          placeholder="hh"
+          starthour={this.props.starthour}
+          onChange={this.props.handleChangeStartHr}
+          required
+        />
+        <input
+          id="input-start-time-area"
+          type="number"
+          placeholder="mm"
+          startminutes={this.props.startminutes}
+          onChange={this.props.handleChangeStartMin}
+          required
+        />
+      </Navbar.Form>
+    );
+  }
+}
+
 class AddBtn extends Component {
   fileSelectHolder = event => {
     this.setState({
@@ -22,13 +82,21 @@ class AddBtn extends Component {
 
   constructor(props, context) {
     super(props, context);
-
+    this.state = {
+      show: false,
+      seconds: "",
+      minutes: "",
+      hour: "",
+      startminutes: "",
+      starthour: ""
+    };
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
-
-    this.state = {
-      show: false
-    };
+    this.handleChangeHr = this.handleChangeHr.bind(this);
+    this.handleChangeMin = this.handleChangeMin.bind(this);
+    this.handleChangeSec = this.handleChangeSec.bind(this);
+    this.handleChangeStartHr = this.handleChangeStartHr.bind(this);
+    this.handleChangeStartMin = this.handleChangeStartMin.bind(this);
   }
 
   handleClose() {
@@ -37,6 +105,36 @@ class AddBtn extends Component {
 
   handleShow() {
     this.setState({ show: true });
+  }
+
+  handleChangeHr(event) {
+    this.setState({
+      hour: event.target.value
+    });
+  }
+
+  handleChangeMin(event) {
+    this.setState({
+      minutes: event.target.value
+    });
+  }
+
+  handleChangeSec(event) {
+    this.setState({
+      seconds: event.target.value
+    });
+  }
+
+  handleChangeStartHr(event) {
+    this.setState({
+      starthour: event.target.value
+    });
+  }
+
+  handleChangeStartMin(event) {
+    this.setState({
+      startminutes: event.target.value
+    });
   }
 
   render() {
@@ -68,7 +166,6 @@ class AddBtn extends Component {
             <Modal.Title>Create a new product card</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            {/* <h4>Text in a modal</h4> */}
             <Navbar>
               <Row>
                 <Navbar.Form pullLeft>
@@ -96,40 +193,23 @@ class AddBtn extends Component {
                   </Navbar.Form>
                 </Col>
                 <Col md={4}>
-                  <Navbar.Form>
-                    <p style={{ marginLeft: "5px" }}>time</p>
-                    <FormControl
-                      id="input-start-time-area"
-                      type="number"
-                      placeholder="hh"
-                    />
-                    <FormControl
-                      id="input-start-time-area"
-                      type="number"
-                      placeholder="mm"
-                    />
-                  </Navbar.Form>
+                  <StartTimeInput
+                    starthour={this.state.starthour}
+                    startminutes={this.state.startminutes}
+                    handleChangeStartHr={this.handleChangeStartHr}
+                    handleChangeStartMin={this.handleChangeStartMin}
+                  />
                 </Col>
               </Row>
               <Row>
-                <Navbar.Form>
-                  <p style={{ marginLeft: "5px" }}>Bidding time</p>
-                  <FormControl
-                    id="input-start-time-area"
-                    type="number"
-                    placeholder="hh"
-                  />
-                  <FormControl
-                    id="input-start-time-area"
-                    type="number"
-                    placeholder="mm"
-                  />
-                  <FormControl
-                    id="input-start-time-area"
-                    type="number"
-                    placeholder="ss"
-                  />
-                </Navbar.Form>
+                <BiddingTimeInput
+                  hour={this.state.hour}
+                  minutes={this.state.minutes}
+                  seconds={this.state.seconds}
+                  handleChangeHr={this.handleChangeHr}
+                  handleChangeMin={this.handleChangeMin}
+                  handleChangeSec={this.handleChangeSec}
+                />
               </Row>
               <Row>
                 <Navbar.Form>
@@ -147,7 +227,22 @@ class AddBtn extends Component {
                       <input type="file" onChange={this.fileHolder} />{" "}
                     </Col>
                     <Col md={3} style={{ marginLeft: "250px" }}>
-                      <Button onClick={this.fileHolder} id="upload-button">
+                      <Button
+                        disabled={
+                          this.state.hour === "" ||
+                          this.state.minutes === "" ||
+                          this.state.seconds === "" ||
+                          this.state.starthour === "" ||
+                          this.startminutes === "" ||
+                          this.state.hour < 0 ||
+                          this.state.minutes < 0 ||
+                          this.state.seconds < 0 ||
+                          this.state.starthour < 0 ||
+                          this.state.startminutes < 0
+                        }
+                        onClick={this.fileHolder}
+                        id="upload-button"
+                      >
                         Upload
                       </Button>
                     </Col>
