@@ -6,7 +6,7 @@ Since the street wear is upcoming trends nowaday, so we came out with an idea th
 
 ## Documents
 
-Trello board : [Trello](https://trello.com/b/myhM5Ihs), [Trello/back-end](https://trello.com/b/myhM5Ihs), [Trello/front-end](https://trello.com/b/nYyXxN0K)</br>
+Trello board : [Trello](https://trello.com/b/myhM5Ihs), [Trello/back-end](https://trello.com/b/TtDLhCaC), [Trello/front-end](https://trello.com/b/nYyXxN0K)</br>
 Iteration plan : [Plan](https://github.com/KorawitRupanya/Project-OSWA/wiki/Plan)
 
 ## Developers
