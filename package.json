@@ -1,31 +1,30 @@
 {
-  "name": "oswa-project",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "bootstrap": "^3.3.7",
-    "mdbreact": "^4.8.2",
-    "react": "^16.6.0",
-    "react-bootstrap": "^0.32.4",
-    "react-dom": "^16.6.0",
-    "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "2.0.5",
-    "react-slideshow-image": "^1.0.8"
-  },
+  "name": "oswa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "webpack --mode development ./frontend/src/components/App.js --output ./frontend/static/main.js",
+    "build": "webpack --mode production ./frontend/src/components/App.js --output ./frontend/static/main.js"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.1.5",
+    "@babel/preset-env": "^7.1.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "dependencies": {
+    "react-bootstrap": "^0.32.4",
+    "react-router-dom": "^4.3.1",
+    "react-slideshow-image": "^1.0.8"
+  }
 }

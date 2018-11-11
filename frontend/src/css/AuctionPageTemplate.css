@@ -1,0 +1,49 @@
+#bidding-detail {
+  color: white;
+}
+
+#image-slideshow {
+  margin-left: 20px;
+}
+
+#main-card {
+  width: 900px;
+  margin-left: 40px;
+  margin-top: 20px;
+  background: -webkit-linear-gradient(#20201f, #20201f);
+  border-color: orange;
+}
+
+#bidding-price-box {
+  width: 900px;
+  margin-left: 40px;
+  margin-top: 20px;
+  background: -webkit-linear-gradient(#20201f, #20201f);
+  border-color: orange;
+  color: white;
+}
+
+#product-name {
+  color: orange;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+#product-detail {
+  width: 900px;
+  margin-left: 40px;
+  background: -webkit-linear-gradient(#20201f, #20201f);
+  border-color: orange;
+  color: white;
+  text-align: left;
+}
+
+#timer {
+  margin-left: 280px;
+}
+
+.vl {
+  margin-left: 20px;
+  border-left: 1px solid orange;
+  height: 300px;
+}
