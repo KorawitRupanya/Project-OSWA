@@ -4,11 +4,12 @@ import crown from "../pictures/crown.png";
 import "../css/BiddingDetail.css";
 
 class BiddingDetail extends Component {
-  constructor(startPrice, biddingPrice) {
+  constructor(startPrice, biddingPrice, biddingTime) {
     super();
     this.state = {
       suggest_price: 10, //startPrice
-      bidding_price: 5 //biddingPrice
+      bidding_price: 5, //biddingPrice
+      bidding_time: 15 //biddingTime
     };
   }
 
@@ -33,27 +34,20 @@ class BiddingDetail extends Component {
   render() {
     return (
       <div>
-        <Row style={{ textAlign: "left" }}>
-          <Col md={4}>
-            <small>Ends In:</small>
-            <br />
-            <strong id="current-time">00:14:36</strong>
-          </Col>
-          <Col md={8}>
-            <small>Current Bid:</small>
-            <br />
-            <strong id="current-bid">250 THB</strong>
-          </Col>
+        <Row style={{ textAlign: "left", marginLeft: "5px" }}>
+          <small>Current Bid:</small>
+          <br />
+          <strong id="current-bid">250 THB</strong>
         </Row>
         <Row id="current-winner">
           <img id="crown-pic" src={crown} alt="crown" />
           username.123
         </Row>
         <Row>
-          <Col md={4} style={{ textAlign: "left", marginLeft: "5px" }}>
+          <Col md={5} style={{ textAlign: "left", marginLeft: "5px" }}>
             <small>Place Your Bid:</small>
             <br />
-            <div bidding-price-set>
+            <div id="bidding-price-set">
               <Button
                 id="bid-price-control-btn"
                 onClick={this.onClickDecreaseButton}
