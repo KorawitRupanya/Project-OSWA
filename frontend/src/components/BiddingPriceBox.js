@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Table } from "react-bootstrap";
-import "../css/BiddingPriceBox.css";
+import style from "../css/BiddingPriceBox.css";
+style.use();
 
 class BiddingPriceBox extends Component {
   render() {
