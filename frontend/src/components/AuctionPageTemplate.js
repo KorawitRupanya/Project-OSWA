@@ -5,7 +5,8 @@ import BiddingDetail from "./BiddingDetail";
 import BiddingPriceBox from "./BiddingPriceBox";
 import ProductDetail from "./ProductDetail";
 import Timer from "./Timer";
-import "../css/AuctionPageTemplate.css";
+import style from "../css/AuctionPageTemplate.css";
+style.use();
 
 class AuctionPageTemplate extends Component {
   render() {

@@ -6,7 +6,8 @@ import {
   OverlayTrigger,
   Popover
 } from "react-bootstrap";
-import "../css/ProductCardTemplate.css";
+import style from "../css/ProductCardTemplate.css";
+style.use();
 
 import pic from "../pictures/watch.png";
 

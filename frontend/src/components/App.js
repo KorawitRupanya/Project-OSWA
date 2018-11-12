@@ -5,7 +5,8 @@ import AuctionNav from "./AuctionNav";
 import AuctionPageTemplate from "./AuctionPageTemplate";
 import AllProductCard from "./AllProductCard";
 import { Grid, Row, Col } from "react-bootstrap";
-import "../css/App.css";
+import style from "../css/App.css";
+style.use();
 
 ReactDOM.render(
   <BrowserRouter>

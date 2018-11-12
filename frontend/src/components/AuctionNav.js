@@ -9,7 +9,8 @@ import {
   FormControl,
   Button
 } from "react-bootstrap";
-import "../css/AuctionNav.css";
+import style from "../css/AuctionNav.css";
+style.use();
 
 class AuctionNav extends Component {
   render() {
