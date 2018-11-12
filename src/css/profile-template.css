@@ -1,0 +1,15 @@
+#plate{
+    width: 287px;
+    height: 700px;
+    text-align: left;
+    padding: 20px;
+}
+#image {
+    width: 250px;
+    height: 250px;
+    text-align: center;
+}
+.fit-picture{
+    width:150px;
+    height:150px;
+  }
