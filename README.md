@@ -33,7 +33,7 @@ Then, node_modules folder will appear on our project directory.
 
 <hr>
 
-Third, you can run our webpage on your browser with localhost:8000 by using command ...
+Third, you can run our webpage on your browser with localhost:3000 by using command ...
 
 ```
 npm start
