@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col, Button } from "react-bootstrap";
 import crown from "../pictures/crown.png";
-import style from "../css/BiddingDetail.css";
-style.use();
+import "../css/BiddingDetail.css";
 
 class BiddingDetail extends Component {
   constructor(startPrice, biddingPrice, biddingTime) {

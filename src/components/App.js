@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import AuctionNav from "./AuctionNav";
 import AuctionPageTemplate from "./AuctionPageTemplate";
 import AllProductCard from "./AllProductCard";
-import { Grid, Row, Col } from "react-bootstrap";
 import ProfileTemplate from "./profile-template";
-import style from "../css/App.css";
-style.use();
+import { Grid, Row, Col } from "react-bootstrap";
+import "../css/App.css";
 
 class App extends Component {
   render() {
@@ -14,15 +13,11 @@ class App extends Component {
         <AuctionNav role="navigation" />
         <Grid fluid>
           <Row className="show-grid">
-            <Col id="first-col" md={2}>
+            <Col id="first-col" md={3}>
               <ProfileTemplate />
-              <strong>For side nav-bar</strong>
             </Col>
             <Col id="second-col" md={8}>
-              <AllProductCard />
-            </Col>
-            <Col md={2}>
-              <strong style={{ color: "orange" }}>For ad?</strong>
+              <AuctionPageTemplate />
             </Col>
           </Row>
         </Grid>

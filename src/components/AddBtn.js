@@ -9,8 +9,7 @@ import {
   Row,
   Col
 } from "react-bootstrap";
-import style from "../css/AddBtn.css";
-style.use();
+import "../css/AddBtn.css";
 
 class AddBtn extends Component {
   fileSelectHolder = event => {
