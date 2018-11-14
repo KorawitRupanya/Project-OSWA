@@ -1,17 +1,40 @@
 import React, { Component } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Col, Row, Grid } from "react-bootstrap";
 
 class TimerInput extends Component {
   render() {
     return (
-      <div style={{ marginLeft: 100 }}>
-        <h3>Input your desired time</h3>
-        <input
-          type="number"
-          value={this.props.value}
-          onChange={this.props.handleChange}
-          required
-        />
+      <div>
+        <Col md={1}>
+          <h5 style={{ color: "white" }}>hr</h5>
+          <input
+            style={{ width: "50px" }}
+            type="number"
+            hour={this.props.hour}
+            onChange={this.props.handleChangeHr}
+            required
+          />
+        </Col>
+        <Col md={1}>
+          <h5 style={{ color: "white" }}>min</h5>
+          <input
+            style={{ width: "50px" }}
+            type="number"
+            minutes={this.props.minutes}
+            onChange={this.props.handleChangeMin}
+            required
+          />
+        </Col>
+        <Col md={1}>
+          <h5 style={{ color: "white" }}>sec</h5>
+          <input
+            style={{ width: "50px" }}
+            type="number"
+            seconds={this.props.seconds}
+            onChange={this.props.handleChangeSec}
+            required
+          />
+        </Col>
       </div>
     );
   }
@@ -20,9 +43,9 @@ class TimerInput extends Component {
 class Timer extends Component {
   render() {
     return (
-      <div>
-        <strong style={{ fontSize: 24, marginLeft: 100, color: "pink" }}>
-          {this.props.value}:{this.props.minutes}:{this.props.seconds}
+      <div style={{ marginLeft: "110px" }}>
+        <strong style={{ fontSize: 36, color: "pink" }}>
+          {this.props.hour}:{this.props.minutes}:{this.props.seconds}
         </strong>
       </div>
     );
@@ -32,11 +55,20 @@ class Timer extends Component {
 class StartButton extends Component {
   render() {
     return (
-      <div style={{ marginLeft: 130 }}>
+      <div>
         <Button
-          className="warning"
-          disabled={!this.props.value}
+          bsStyle="warning"
+          bsSize="large"
+          disabled={
+            this.props.hour === "" ||
+            this.props.minutes === "" ||
+            this.props.seconds === "" ||
+            this.props.hour < 0 ||
+            this.props.minutes < 0 ||
+            this.props.seconds < 0
+          }
           onClick={this.props.startCountDown}
+          style={{ marginTop: "15px" }}
         >
           Start
         </Button>
@@ -49,21 +81,35 @@ class TimerBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      seconds: "00",
-      minutes: "00",
-      value: "",
+      seconds: "",
+      minutes: "",
+      hour: "",
       isClicked: false
     };
     this.secondsRemaining = 0;
     this.intervalHandle = 0;
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeHr = this.handleChangeHr.bind(this);
+    this.handleChangeMin = this.handleChangeMin.bind(this);
+    this.handleChangeSec = this.handleChangeSec.bind(this);
     this.startCountDown = this.startCountDown.bind(this);
     this.tick = this.tick.bind(this);
   }
 
-  handleChange(event) {
+  handleChangeHr(event) {
     this.setState({
-      value: event.target.value
+      hour: event.target.value
+    });
+  }
+
+  handleChangeMin(event) {
+    this.setState({
+      minutes: event.target.value
+    });
+  }
+
+  handleChangeSec(event) {
+    this.setState({
+      seconds: event.target.value
     });
   }
 
@@ -73,7 +119,7 @@ class TimerBox extends Component {
     var sec = this.secondsRemaining - (hour * 3600 + min * 60);
 
     this.setState({
-      value: hour,
+      hour: hour,
       minutes: min,
       seconds: sec
     });
@@ -86,19 +132,19 @@ class TimerBox extends Component {
 
     if (min < 10) {
       this.setState({
-        value: "0" + this.state.min
+        minutes: "0" + this.state.minutes
       });
     }
 
     if (hour === 0) {
       this.setState({
-        value: "00"
+        hour: "00"
       });
     }
 
     if ((hour < 10) & (hour > 0)) {
       this.setState({
-        value: "0" + this.state.value
+        hour: "0" + this.state.hour
       });
     }
 
@@ -111,8 +157,11 @@ class TimerBox extends Component {
 
   startCountDown() {
     this.intervalHandle = setInterval(this.tick, 1000);
-    let time = this.state.value;
-    this.secondsRemaining = time * 3600 - 1;
+    let hr = this.state.hour * 3600;
+    let m = this.state.minutes * 60;
+    let s = this.state.seconds * 1;
+    this.secondsRemaining = hr + m + s;
+
     this.setState({
       isClicked: true
     });
@@ -122,35 +171,36 @@ class TimerBox extends Component {
     const clicked = this.state.isClicked;
     if (clicked) {
       return (
-        <div>
-          <div className="row">
-            <Timer
-              value={this.state.value}
-              minutes={this.state.minutes}
-              seconds={this.state.seconds}
-            />
-          </div>
-        </div>
+        <Row
+          style={{ textAlign: "left", marginLeft: "1px", marginTop: "10px" }}
+        >
+          <Timer
+            hour={this.state.hour}
+            minutes={this.state.minutes}
+            seconds={this.state.seconds}
+          />
+        </Row>
       );
     } else {
       return (
-        <div>
-          <div className="row">
+        <Grid>
+          <Row className="show-grid" style={{ textAlign: "left" }}>
             <TimerInput
-              value={this.state.value}
-              handleChange={this.handleChange}
-            />
-            <Timer
-              value={this.state.value}
+              hour={this.state.hour}
               minutes={this.state.minutes}
               seconds={this.state.seconds}
+              handleChangeHr={this.handleChangeHr}
+              handleChangeMin={this.handleChangeMin}
+              handleChangeSec={this.handleChangeSec}
             />
             <StartButton
               startCountDown={this.startCountDown}
-              value={this.state.value}
+              hour={this.state.hour}
+              minutes={this.state.minutes}
+              seconds={this.state.seconds}
             />
-          </div>
-        </div>
+          </Row>
+        </Grid>
       );
     }
   }
