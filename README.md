@@ -29,7 +29,8 @@ or
 yarn
 ```
 
-Then, node_modules folder will appear on our project directory.
+Then, node_modules folder will appear on our project directory.</br>
+If you don't have 'npm' or 'yarn' on your computer, you can download and install [npm](https://www.npmjs.com/get-npm) or [yarn](https://yarnpkg.com/en/docs/install#mac-stable) here!
 
 <hr>
 
