@@ -5,8 +5,8 @@
   "main": "App.js",
   "scripts": {
     "start": "react-scripts start",
-    "dev": "webpack --mode development ./frontend/src/components/App.js --output ./frontend/static/main.js",
-    "build": "webpack --mode production ./frontend/src/components/App.js --output ./frontend/static/main.js"
+    "dev": "webpack --mode development ./frontend/src/index.js --output ./frontend/static/main.js",
+    "build": "webpack --mode production ./frontend/src/index.js --output ./frontend/static/main.js"
   },
   "keywords": [],
   "author": "",
