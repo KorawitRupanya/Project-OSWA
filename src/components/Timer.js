@@ -25,7 +25,7 @@ class TimerInput extends Component {
             required
           />
         </Col>
-        <Col md={1}>
+        <Col md={2}>
           <h5 style={{ color: "white" }}>sec</h5>
           <input
             style={{ width: "50px" }}
@@ -183,24 +183,22 @@ class TimerBox extends Component {
       );
     } else {
       return (
-        <Grid>
-          <Row className="show-grid" style={{ textAlign: "left" }}>
-            <TimerInput
-              hour={this.state.hour}
-              minutes={this.state.minutes}
-              seconds={this.state.seconds}
-              handleChangeHr={this.handleChangeHr}
-              handleChangeMin={this.handleChangeMin}
-              handleChangeSec={this.handleChangeSec}
-            />
-            <StartButton
-              startCountDown={this.startCountDown}
-              hour={this.state.hour}
-              minutes={this.state.minutes}
-              seconds={this.state.seconds}
-            />
-          </Row>
-        </Grid>
+        <Row className="show-grid" style={{ textAlign: "left" }}>
+          <TimerInput
+            hour={this.state.hour}
+            minutes={this.state.minutes}
+            seconds={this.state.seconds}
+            handleChangeHr={this.handleChangeHr}
+            handleChangeMin={this.handleChangeMin}
+            handleChangeSec={this.handleChangeSec}
+          />
+          <StartButton
+            startCountDown={this.startCountDown}
+            hour={this.state.hour}
+            minutes={this.state.minutes}
+            seconds={this.state.seconds}
+          />
+        </Row>
       );
     }
   }
