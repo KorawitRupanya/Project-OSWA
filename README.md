@@ -6,7 +6,7 @@ Since the street wear is upcoming trends nowaday, so we came out with an idea th
 
 ## How to run our project?
 
-First, clone our repository, and go to directory.
+**1.** Clone our repository, and go to directory.
 
 ```
 git clone https://github.com/KorawitRupanya/Project-OSWA.git
@@ -17,14 +17,12 @@ cd Project-OSWA
 ```
 
 <hr>
-Second, you have to add node_modules by using command ...
 
+**2.**  You have to add node_modules by using command 
 ```
 npm i
 ```
-
-or
-
+or 
 ```
 yarn
 ```
@@ -34,14 +32,11 @@ If you don't have 'npm' or 'yarn' on your computer, you can download and install
 
 <hr>
 
-Third, you can run our webpage on your browser with localhost:3000 by using command ...
-
+**3.**  You can run our webpage on your browser with `localhost:3000` by using command 
 ```
 npm start
-```
-
-or
-
+``` 
+or 
 ```
 yarn start
 ```
