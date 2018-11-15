@@ -9,7 +9,7 @@ Since the street wear is upcoming trends nowaday, so we came out with an idea th
 First, clone our repository, and go to directory.
 
 ```
-https://github.com/KorawitRupanya/Project-OSWA.git
+git clone https://github.com/KorawitRupanya/Project-OSWA.git
 ```
 
 ```
