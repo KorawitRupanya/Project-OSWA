@@ -4,6 +4,11 @@
 
 Since the street wear is upcoming trends nowaday, so we came out with an idea that is to do an e-auction web application.By using this application, user be able to join the others bidding and also can create their own auction. The application is look similar to the well-know web like ebay-auction.
 
+## Links
+
+Trello board: [Trello](https://trello.com/b/myhM5Ihs), [Trello/back-end](https://trello.com/b/TtDLhCaC), [Trello/front-end](https://trello.com/b/nYyXxN0K)</br>
+[Iteration Plan](https://github.com/KorawitRupanya/Project-OSWA/wiki/Plan)
+
 ## How to run our project?
 
 **1.** Clone our repository, and go to directory.
@@ -18,11 +23,14 @@ cd Project-OSWA
 
 <hr>
 
-**2.**  You have to add node_modules by using command 
+**2.** You have to add node_modules by using command
+
 ```
 npm i
 ```
-or 
+
+or
+
 ```
 yarn
 ```
@@ -32,19 +40,17 @@ If you don't have 'npm' or 'yarn' on your computer, you can download and install
 
 <hr>
 
-**3.**  You can run our webpage on your browser with `localhost:3000` by using command 
+**3.** You can run our webpage on your browser with `localhost:3000` by using command
+
 ```
 npm start
-``` 
-or 
+```
+
+or
+
 ```
 yarn start
 ```
-
-## Documents
-
-Trello board : [Trello](https://trello.com/b/myhM5Ihs), [Trello/back-end](https://trello.com/b/TtDLhCaC), [Trello/front-end](https://trello.com/b/nYyXxN0K)</br>
-Iteration plan : [Plan](https://github.com/KorawitRupanya/Project-OSWA/wiki/Plan)
 
 ## Developers
 
