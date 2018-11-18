@@ -1,18 +1,22 @@
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Sign</title>
-</head>
-<body>
-<form action="/adminpage/" method="post">
-{% csrf_token %}
-productName :
-<input type="text" name="productName">
-detail:
-<input type="text" name="detail">
-price:
-<input type="number" name="price">
-<input type="submit" value="submit">
-</form>
-</body>
-</html>
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+    </head>
+    <body>
+        <form action="/adminpage/" method="post">
+        {% csrf_token %}
+        productName :
+        <input type="text" name="productName">
+        detail:
+        <input type="text" name="detail">
+        price:
+        <input type="number" name="price">
+        <input type="submit" value="submit">
+        </form>
+
+        <form action="/adminpage/check/"><input type="submit" value="check"></form>
+        
+    </body>
+    </html>
