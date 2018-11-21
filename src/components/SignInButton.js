@@ -1,11 +1,6 @@
 import React, { Component, form } from "react";
-import {
-  Button,
-  FormGroup,
-  ControlLabel,
-  FormControl,
-  HelpBlock
-} from "react-bootstrap";
+import { Button, FormGroup, ControlLabel, FormControl } from "react-bootstrap";
+import Picker from "react-month-picker";
 import pro from "../pictures/profile.png";
 import "../css/AuctionPageTemplate.css";
 
@@ -67,6 +62,7 @@ class SignInBar extends Component {
   render() {
     const clicked = this.state.isClicked;
     const subClicked = this.state.isSubClicked;
+
     if (clicked) {
       if (!subClicked) {
         return (
@@ -94,25 +90,90 @@ class SignInBar extends Component {
             </p>
           </div>
         );
-      } if (subClicked) {
+      }
+      if (subClicked) {
         return (
           <div>
+            <h1> Invoice </h1>
+            <dir/>
             <form>
+              <ControlLabel>Name on Card</ControlLabel>
+              <FormControl type="text" />
+              <dir/>
               <FormGroup
                 controlId="formBasicText"
                 validationState={this.getValidationState()}
               >
-                <ControlLabel>Insert Your Credits Card Numbers</ControlLabel>
+                <ControlLabel>Insert Your Credits Card</ControlLabel>
                 <FormControl
                   type="text"
                   value={this.state.value}
-                  placeholder="Enter text"
+                  placeholder="Credits Card Numbers"
                   onChange={this.handleChange}
                 />
                 <FormControl.Feedback />
-                <HelpBlock>Validation is based on Numbers.</HelpBlock>
+                {/* <HelpBlock>Validation is based on Numbers.</HelpBlock> */}
               </FormGroup>
             </form>
+            <FormGroup>
+              {/* Card Expiration:
+            <select name="expireMM" id="expireMM">
+              <option value="">Month</option>
+              <option value="01">January</option>
+              <option value="02">February</option>
+              <option value="03">March</option>
+              <option value="04">April</option>
+              <option value="05">May</option>
+              <option value="06">June</option>
+              <option value="07">July</option>
+              <option value="08">August</option>
+              <option value="09">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+            <select name="expireYY" id="expireYY">
+              <option value="">Year</option>
+              <option value="10">2010</option>
+              <option value="11">2011</option>
+              <option value="12">2012</option>
+            </select>
+            <input
+              class="inputCard"
+              type="hidden"
+              name="expiry"
+              id="expiry"
+              maxlength="4"
+            /> */}
+              <ControlLabel>Expiry date</ControlLabel>
+              <FormControl type="month"/>
+            </FormGroup>
+            <FormGroup>
+              <ControlLabel>Security Code </ControlLabel>{" "}
+              <FormControl
+                type="number"
+                min="000"
+                max="9999"
+                placeholder="CVC"
+              />
+            </FormGroup>
+            {/* <ul>
+                <li>
+                  <label>Pick A Month</label>
+                  <div>
+                    <Picker
+                      ref="pickRange"
+                      years={{ min: 2017, max: 2077}}
+                      range={mrange}
+                      lang={pickerLang}
+                      // theme="dark"
+                      onChange={this.handleRangeChange}
+                      onDismiss={this.handleRangeDismiss}
+                    />
+                  </div>
+                </li>
+              </ul> */}{" "}
+            <dir/>
             <Button bsStyle="primary" md={10} onClick={this.subButtonUnClicked}>
               Save
             </Button>
