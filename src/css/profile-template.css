@@ -9,6 +9,12 @@
     height: 250px;
     text-align: center;
 }
+
+#credits {
+    width: 250px;
+    height: 50px;
+}
+
 .fit-picture{
     width:150px;
     height:150px;

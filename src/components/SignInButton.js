@@ -2,6 +2,7 @@ import React, { Component, form } from "react";
 import { Button, FormGroup, ControlLabel, FormControl } from "react-bootstrap";
 import Picker from "react-month-picker";
 import pro from "../pictures/profile.png";
+import credits from "../pictures/credits.png"
 import "../css/AuctionPageTemplate.css";
 
 class SignInBar extends Component {
@@ -97,6 +98,9 @@ class SignInBar extends Component {
             <h1> Invoice </h1>
             <dir/>
             <form>
+              <dir/>
+              <img id="credits" src={credits} alt={"Card accepted pictures"} />
+              <dir/>
               <ControlLabel>Name on Card</ControlLabel>
               <FormControl type="text" />
               <dir/>
