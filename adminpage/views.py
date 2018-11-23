@@ -3,7 +3,9 @@ from firebase import firebase
 from . import auctionCards
 import datetime
 
-firebase = firebase.FirebaseApplication('https://project-oswa.firebaseio.com/',None)
+FIREBASE_SECRET = 'SQjRByOUlz7N0A0IlKjnBrPUkqiTfCfgOnJs9HdX'
+FIREBASE_URL = 'https://project-oswa.firebaseio.com/'
+firebase = firebase.FirebaseApplication(FIREBASE_URL,None)
 
 def postAuctionCard(request):
     render(request, 'adminpage.html')
@@ -27,6 +29,7 @@ def postAuctionCard(request):
 def requestAuctionCard(request):
     render(request, 'check.html')
     auction_cards = []
+    n = []
 
     result = firebase.get('/auction_cards', None)
     for key in result:
@@ -34,12 +37,14 @@ def requestAuctionCard(request):
         detail = result[key]['detail']
         price = result[key]['price']
         time = result[key]['time']
+        n.append(productname)
+
         auction_card = auctionCards.make_card(productname, detail, price, time)
         auction_cards.append(auction_card)
 
     for auction_card in auction_cards: print(auction_card)
 
-    return render(request, 'check.html', {'products': auction_cards})
+    return render(request, 'check.html', {'products': auction_cards, 'n': n})
 
 
 
