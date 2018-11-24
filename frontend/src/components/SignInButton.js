@@ -1,14 +1,17 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 import { Button } from "react-bootstrap";
 import pro from "../pictures/profile.png";
 import "../css/AuctionPageTemplate.css";
+import { auth } from "../../../backend/firebase";
 
 class SignInBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isClicked: false,
-      isSignClicked: false
+      isSignClicked: false,
+      email: '',
+      password:'',
     };
     this.buttonClicked = this.buttonClicked.bind(this);
     this.buttonUnClicked = this.buttonUnClicked.bind(this);
@@ -40,7 +43,23 @@ class SignInBar extends Component {
     });
   }
 
-  saveClicked() {}
+  updateValue(evt){
+    this.setState({
+      [evt.target.name]: evt.target.value
+    });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const email= this.state.email;
+    const password = this.state.password;
+    auth.createUserWithEmailAndPassword(email,password);
+    this.setState({
+         email: '',
+         password: ''
+    })
+ }
+
 
   render() {
     const clicked = this.state.isClicked;
@@ -66,16 +85,16 @@ class SignInBar extends Component {
       );
     } else if (signClicked) {
       return (
-        <div>
-          <h2>Sign Up</h2>
-          <dir/>
-          <input placeholder="Username"/>
-          <input placeholder="Password"/>
-          <dir/>
-          <Button bsStyle="warning" md={10} onClick={this.signUnClicked}>
-              Enter
-          </Button>
-        </div>
+          <div>
+            <form>
+            <h2>Sign Up</h2>
+            <dir/>
+            <input placeholder="Username" type="email" name="email" value={this.state.email} onChange={evt => this.updateValue(evt)}/>
+            <input placeholder="Password" name="password" type="password" value={this.state.password} ref={this.password} autoComplete="none" onChange={evt => this.updateValue(evt)}/>
+            <dir/>
+            <Button bsStyle="warning" md={10} type="submit" onClick={(evt) => this.handleSubmit(evt)}>Submit</Button>
+            </form>
+          </div>
       );
     } else {
       return (
@@ -96,7 +115,11 @@ class SignInBar extends Component {
         </div>
       );
     }
+    
   }
+
+
 }
+
 
 export default SignInBar;
