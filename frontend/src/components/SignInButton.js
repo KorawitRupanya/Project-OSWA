@@ -8,38 +8,39 @@ class SignInBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isClicked: false,
-      isSignClicked: false,
+      isSignInClicked: false,
+      isSignUpClicked: false,
       email: '',
       password:'',
     };
-    this.buttonClicked = this.buttonClicked.bind(this);
-    this.buttonUnClicked = this.buttonUnClicked.bind(this);
-    this.signClicked = this.signClicked.bind(this);
-    this.signUnClicked = this.signUnClicked.bind(this);
+    this.signInClicked = this.signInClicked.bind(this);
+    this.signInUnClicked = this.signInUnClicked.bind(this);
+    this.signUpClicked = this.signUpClicked.bind(this);
+    this.signUpUnClicked = this.signUpUnClicked.bind(this);
+
   }
 
-  buttonClicked() {
+  signInClicked() {
     this.setState({
-      isClicked: true
+      isSignInClicked: true
     });
   }
 
-  buttonUnClicked() {
+  signInUnClicked() {
     this.setState({
-      isClicked: false
+      issignInClicked: false
     });
   }
 
-  signClicked() {
+  signUpClicked() {
     this.setState({
-      isSignClicked: true
+      isSignUpClicked: true
     });
   }
 
-  signUnClicked() {
+  signUpUnClicked  () {
     this.setState({
-      isSignClicked: false
+      isSignUpClicked: false
     });
   }
 
@@ -49,41 +50,76 @@ class SignInBar extends Component {
     });
   };
 
-  handleSubmit = (e) => {
+  handleSignUp = (e) => {
     e.preventDefault();
     const email= this.state.email;
     const password = this.state.password;
-    auth.createUserWithEmailAndPassword(email,password);
+    const promise = auth.createUserWithEmailAndPassword(email,password);
+    console.log(promise)
+    promise = auth.signInWithEmailAndPassword(email,password);
+    console.log(promise);
     this.setState({
          email: '',
-         password: ''
+         password: '',
+         isSignUpClicked: false
     })
  }
 
+  handleSignin = (e) => {
+    e.preventDefault();
+    const email= this.state.email;
+    const password = this.state.password;
+    auth.signInWithEmailAndPassword(email,password);
+    this.setState({
+        email: '',
+        password: ''
+    })
+  }
+
+  handleLogOut = (e) => {
+    e.preventDefault();
+    auth.signOut();
+  }
 
   render() {
-    const clicked = this.state.isClicked;
-    const signClicked = this.state.isSignClicked;
-    if (clicked) {
+    const signInClicked = this.state.isSignInClicked;
+    const signUpClicked = this.state.isSignUpClicked;
+    const isLogin = localStorage.getItem('isLogin');
+
+    auth.onAuthStateChanged(user =>{
+      if(user){
+        console.log("login");
+        localStorage.clear();
+        localStorage.setItem('isLogin', 'true');
+      }else {
+        console.log("not login")
+        localStorage.clear();
+        localStorage.setItem('isLogin', 'false');
+      }
+    });
+    if (isLogin == "true") {
       return (
         <div>
-          <img id="image" src={pro} alt={"Profile pictures"} />
-          <h3>Name: Hairy Harry</h3>
-          <p>
-            <li>Member ID :007</li>
-            <li>Call :191</li>
-            <li>3 Own Auctions</li>
-            <li>5 auctions were Bidded </li>
-          </p>
-          <p>
-            <Button bsStyle="primary">Edit Profile</Button>
-            <Button bsStyle="warning" md={10} onClick={this.buttonUnClicked}>
+            <Button bsStyle="warning" md={10} onClick={(evt) => this.handleLogOut(evt)}>
               Logout
             </Button>
-          </p>
         </div>
       );
-    } else if (signClicked) {
+    } else 
+    if (signInClicked) {
+      return (
+        <div>
+            <form>
+            <h2>Sign In</h2>
+            <dir/>
+            <input placeholder="Username" type="email" name="email" value={this.state.email} onChange={evt => this.updateValue(evt)}/>
+            <input placeholder="Password" name="password" type="password" value={this.state.password} ref={this.password} autoComplete="none" onChange={evt => this.updateValue(evt)}/>
+            <dir/>
+            <Button bsStyle="warning" md={10} type="submit" onClick={(evt) => this.handleSignin(evt)}>Log in</Button>
+            </form>
+        </div>
+      );
+    }  else if (signUpClicked) {
       return (
           <div>
             <form>
@@ -92,14 +128,14 @@ class SignInBar extends Component {
             <input placeholder="Username" type="email" name="email" value={this.state.email} onChange={evt => this.updateValue(evt)}/>
             <input placeholder="Password" name="password" type="password" value={this.state.password} ref={this.password} autoComplete="none" onChange={evt => this.updateValue(evt)}/>
             <dir/>
-            <Button bsStyle="warning" md={10} type="submit" onClick={(evt) => this.handleSubmit(evt)}>Submit</Button>
+            <Button bsStyle="warning" md={10} type="submit" onClick={(evt) => this.handleSignUp(evt)}>Submit</Button>
             </form>
           </div>
       );
     } else {
       return (
         <div>
-          <Button bsStyle="primary" md={10} onClick={this.signClicked}>
+          <Button bsStyle="primary" md={10} onClick={this.signUpClicked}>
             Sign Up
           </Button>
           <hr
@@ -109,7 +145,7 @@ class SignInBar extends Component {
               height: 1
             }}
           />
-          <Button bsStyle="warning" onClick={this.buttonClicked}>
+          <Button bsStyle="warning" onClick={this.signInClicked}>
             Sign in
           </Button>
         </div>
