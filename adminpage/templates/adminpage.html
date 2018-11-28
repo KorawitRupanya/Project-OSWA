@@ -4,19 +4,47 @@
     <meta charset="UTF-8">
     <title>Add Product</title>
     </head>
-    <body>
-        <form action="/adminpage/" method="post">
-        {% csrf_token %}
-        productName :
-        <input type="text" name="productName">
-        detail:
-        <input type="text" name="detail">
-        price:
-        <input type="number" name="price">
-        <input type="submit" value="submit">
-        </form>
+    <body style="background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%); height: 100vh;">
+        <div class="block" text-align: center;">
+            <h1 style="color:rgb(0, 0, 0);">Admin Page</h1>        
+            <form action="/adminpage/" method="post">
+                {% csrf_token %}
+                <!-- ProductName:  -->
+                <input class="box" type="text" name="productName" placeholder="ProductName">
+                <br/>
+                <!-- Details:  -->
+                <input class="box" type="text" name="detail" placeholder="Detail">
+                <br/>
+                <!-- Price:  -->
+                <input class="box" type="number" name="price" placeholder="Price">
+                <br/>
+                
+                <input  type="submit" value="submit">
 
-        <form action="/adminpage/check/"><input type="submit" value="check"></form>
-        
+            </form>
+            
+            <form action="/adminpage/check/"><input type="submit" value="check"></form>
+        </div> 
     </body>
     </html>
+    <style>
+            .block {
+                
+                display: block;
+                width: 100%;
+                border: none;
+                background-image: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%);;
+                color: rgb(0, 0, 0);
+                padding: 14px 28px;
+                font-size: 16px;
+                /* cursor: custom; */
+                text-align: center;
+            }
+            .custom {
+                cursor: url('https://imgur.com/MlB6wcQ'), auto;
+            }
+            .box{
+                height: 25px;
+                width: 500px;
+            }
+            </style>
