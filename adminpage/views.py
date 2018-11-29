@@ -16,7 +16,6 @@ def postAuctionCard(request):
     
     if productName is not "" and detail is not "" and price is not "":
         ts = time.time()
-        print(ts)
     try:
         result = firebase.post('auction_cards', {'productName': productName,'detail': detail, 'price': price, 'timestamp': ts})
         print(result)
