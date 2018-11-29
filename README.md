@@ -1,15 +1,20 @@
 # Project-OSWA
-
+[![Build Status](https://travis-ci.com/KorawitRupanya/Project-OSWA.svg?branch=master)](https://travis-ci.com/KorawitRupanya/Project-OSWA)
 ## Description
 
 Since the street wear is upcoming trends nowaday, so we came out with an idea that is to do an e-auction web application.By using this application, user be able to join the others bidding and also can create their own auction. The application is look like the well-know web like ebay-auction.
 
 ## Links
 
-Trello board: [Trello](https://trello.com/b/myhM5Ihs), [Trello/back-end](https://trello.com/b/TtDLhCaC), [Trello/front-end](https://trello.com/b/nYyXxN0K)</br>
+Trello board: [Trello](https://trello.com/b/myhM5Ihs)</br>
 [Iteration Plan](https://github.com/KorawitRupanya/Project-OSWA/wiki/Plan)
 
-## How to run our project?
+## Require
+[python](https://www.python.org/downloads/),
+[django](https://www.djangoproject.com/download/),
+[npm](https://www.npmjs.com/get-npm) 
+
+## How to install and run our project locally?
 
 **1.** Clone our repository, and go to directory.
 
@@ -29,34 +34,22 @@ cd Project-OSWA
 npm i
 ```
 
-or
-
-```
-yarn
-```
-
 Then, node_modules folder will appear on our project directory.</br>
-If you don't have 'npm' or 'yarn' on your computer, you can download and install [npm](https://www.npmjs.com/get-npm) or [yarn](https://yarnpkg.com/en/docs/install#mac-stable) here!
 
 <hr>
 
-**3.** You can run our webpage on your browser with `localhost:3000` by using command
+**3.** You can run our webpage on your browser with `localhost:8000` by using command
 
 ```
-npm start
+python manage.py runserver
 ```
 
-or
-
-```
-yarn start
-```
 
 ## Developers
 
-| ID         | Name                   | Roles                              |
-| ---------- | ---------------------- | ---------------------------------- |
-| 6010545684 | Korawit Rupanya        | Scrum Master, Full Stack Developer |
-| 6010546915 | Gunthee Tawewatmongkol | Frontend-developer, Bugs killer    |
-| 601054     | Sorawit Tantharatana   | Frontend-developer                 |
-| 6010545056 | Pornpavee Seri-umnouy  | Backend-developer                  |
+| Name                   | Roles                              |
+| ---------------------- | ---------------------------------- |
+| Korawit Rupanya        | Scrum Master, Full Stack Developer |
+| Gunthee Tawewatmongkol | Frontend-developer, Bugs killer    |
+| Sorawit Tantharatana   | Frontend-developer                 |
+| Pornpavee Seri-umnouy  | Backend-developer                  |
