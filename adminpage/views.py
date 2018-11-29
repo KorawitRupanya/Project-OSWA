@@ -13,8 +13,12 @@ def postAuctionCard(request):
     productName = request.POST.get('productName')
     detail = request.POST.get("detail")
     price = request.POST.get("price")
-    
-    if productName is not "" and detail is not "" and price is not "":
+
+    checkProduceName = productName is not None and productName is not ""
+    checkDetail = detail is not None and detail is not ""
+    checkPrice = price is not None and price is not ""
+
+    if checkProduceName and checkDetail and checkPrice:
         ts = time.time()
     try:
         result = firebase.post('auction_cards', {'productName': productName,'detail': detail, 'price': price, 'timestamp': ts})
