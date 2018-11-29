@@ -2,7 +2,7 @@
 
 ## Description
 
-Since the street wear is upcoming trends nowaday, so we came out with an idea that is to do an e-auction web application.By using this application, user be able to join the others bidding and also can create their own auction. The application is look similar to the well-know web like ebay-auction.
+Since the street wear is upcoming trends nowaday, so we came out with an idea that is to do an e-auction web application.By using this application, user be able to join the others bidding and also can create their own auction. The application is look like the well-know web like ebay-auction.
 
 ## Links
 
