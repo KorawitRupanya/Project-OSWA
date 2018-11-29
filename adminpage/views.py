@@ -14,7 +14,7 @@ def postAuctionCard(request):
     detail = request.POST.get("detail")
     price = request.POST.get("price")
     
-    if productName is not None:
+    if productName is not "" and detail is not "" and price is not "":
         time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     try:
