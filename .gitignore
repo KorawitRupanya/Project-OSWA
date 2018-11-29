@@ -1,10 +1,23 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+firebase-debug.log*
+
 # dependencies
 /node_modules
+/venv
 
 # testing
 /coverage
+
+#codecov
+.coverage
+
 
 # production
 /build
@@ -25,4 +38,11 @@ yarn-error.log*
 #static files
 /static
 
+__pycache__
 *.pyc
+
+#pycharm
+.idea
+
+# Firebase cache
+.firebase/
