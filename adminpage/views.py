@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from firebase import firebase
 from . import auctionCards
-import datetime
+import time
 
 FIREBASE_SECRET = 'SQjRByOUlz7N0A0IlKjnBrPUkqiTfCfgOnJs9HdX'
 FIREBASE_URL = 'https://project-oswa.firebaseio.com/'
@@ -15,10 +15,10 @@ def postAuctionCard(request):
     price = request.POST.get("price")
     
     if productName is not "" and detail is not "" and price is not "":
-        time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
+        ts = time.time()
+        print(ts)
     try:
-        result = firebase.post('auction_cards', {'productName': productName,'detail': detail, 'price': price, 'time': time})
+        result = firebase.post('auction_cards', {'productName': productName,'detail': detail, 'price': price, 'timestamp': ts})
         print(result)
     except:
         message = "invalid cerediantials"
