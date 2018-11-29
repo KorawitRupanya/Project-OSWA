@@ -39,7 +39,7 @@ def requestAuctionCard(request):
         productname = result[key]['productName']
         detail = result[key]['detail']
         price = result[key]['price']
-        time = result[key]['time']
+        time = result[key]['timestamp']
         n.append(productname)
 
         auction_card = auctionCards.make_card(productname, detail, price, time)

@@ -7,8 +7,13 @@
   <body
     style="text-align: center; background-image: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%); height: 100vh;"
   >
-    <div class="block" style="margin-left: 200px;padding-left: 200px; padding-right: 200px;">
-      <h1 style="color:rgb(255, 255, 255); font-size:5vw;">Add Product Page</h1>
+    <div
+      class="block"
+      style="margin-left: 200px;padding-left: 200px; padding-right: 200px;"
+    >
+      <h1 style="color:rgb(255, 255, 255); font-size:3vw; margin-bottom: 50px;">
+        Add Product Page
+      </h1>
       <form action="/adminpage/" method="post">
         {% csrf_token %}
         <!-- ProductName: -->
@@ -25,24 +30,24 @@
         <!-- Price: -->
         <input class="box" type="number" name="price" placeholder="   Price" />
         <br />
-        <button class="button" type="submit" value="submit" >Submit</button>
+        <button class="button" type="submit" value="submit">Submit</button>
       </form>
 
       <form action="/adminpage/check/">
-        <button class="button" type="submit" value="check" >Check</button>
+        <button class="button" type="submit" value="check">Check</button>
       </form>
     </div>
   </body>
 </html>
 <style>
-    body{
-        cursor: url("https://i.ibb.co/RCN81x1/mono-Cur-2.png"), auto;
-    }
+  body {
+    cursor: url("https://i.ibb.co/RCN81x1/mono-Cur-2.png"), auto;
+  }
   .block {
     border-radius: 50px;
     display: block;
     width: 600px;
-    height: 450px;
+    height: 500px;
     border: none;
     /* background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%); */
     background-image: linear-gradient(
@@ -63,16 +68,16 @@
   .box {
     font-size: 20px;
     padding: 5px;
-    margin-bottom: 2%;
+    margin-bottom: 5%;
     border-radius: 50px;
     line-height: 2;
     height: 25px;
     width: 500px;
-    cursor: url("https://i.ibb.co/RCN81x1/mono-Cur-2.png"),auto;
+    cursor: url("https://i.ibb.co/RCN81x1/mono-Cur-2.png"), auto;
     outline: none;
   }
-  .button{
-      background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+  .button {
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
     font-size: 20px;
     color: #231557;
     border-radius: 50px;
@@ -86,7 +91,7 @@
     border: none;
   }
   .button:hover {
-    background: none; 
-    color: #FFFEFF
-}
+    background: none;
+    color: #fffeff;
+  }
 </style>
