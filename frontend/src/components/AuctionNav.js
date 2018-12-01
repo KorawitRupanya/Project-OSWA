@@ -21,7 +21,7 @@ class AuctionNav extends Component {
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
-        <Navbar.Collapse>
+        <Navbar.Collapse style={{ width: "1440px" }}>
           <Nav>
             <NavItem id="item" eventKey={1} href="#">
               Home
