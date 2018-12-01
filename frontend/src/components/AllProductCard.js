@@ -2,14 +2,6 @@ import React, { Component } from "react";
 import CreateProductCard from "./ProductCardTemplate"
 import AddBtn from "./AddBtn";
 import { Grid, Row } from "react-bootstrap";
-import {
-  getFirebaseData,
-  productName,
-  detail,
-  price,
-  time,
-  id,
-} from "../../../backend/getFirebaseData"
 
 class AllProductCard extends Component {
 
@@ -29,10 +21,6 @@ class AllProductCard extends Component {
 
   render() {
   
-    console.log(productName);
-    console.log(productName.length);
-    console.log(productName.pop())
-    
     return (
       <Grid fluid>
         <AddBtn />

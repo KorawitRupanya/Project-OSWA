@@ -1,13 +1,17 @@
 import {database} from "./firebase"
 
-const productName = []
-const detail = [];
-const price = [];
-const time = [];
-const id = []
 function getFirebaseData(){
+    console.log("ddddd");
+    localStorage.clear();
+    console.log("get fire base");
+    var productName = [];
+    var detail = [];
+    var price = [];
+    var time = [];
+    var id = [];
+
     var ref = database.ref("auction_cards");
-    
+
     ref.on("child_added", function(snapshot) {
         var newProduct = snapshot.val();
         console.log("Product name: " + newProduct.productName);
@@ -20,9 +24,15 @@ function getFirebaseData(){
         price.push(newProduct.price);
         time.push(newProduct.time);
         id.push(snapshot.key);
+
     });
 
-    console.log("in get data", productName);
+//     console.log(productName);
+//     localStorage.setItem('produceName', productName);
+//     localStorage.setItem('detail', detail);
+//     localStorage.setItem('price', price);
+//     localStorage.setItem('time', time);
+//     localStorage.setItem('id', id);
 }
 
 export{
@@ -32,4 +42,4 @@ export{
     price,
     time,
     id,
-}
+};
