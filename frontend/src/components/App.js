@@ -19,7 +19,16 @@ class App extends Component {
               <ProfileTemplate />
             </Col>
             <Col id="second-col" md={8}>
-              <AuctionPageTemplate />
+              {/* This is a main component that show on index page.
+              Now we have 2 large components that you can change, 
+              which are ...
+              1. AllProductCard
+              2. AuctionPageTemplate
+
+              If you want to show "AuctionPageTemplate", put comment below this out. */}
+
+              {/* <AuctionPageTemplate/> */}
+              <AllProductCard />
             </Col>
           </Row>
         </Grid>
