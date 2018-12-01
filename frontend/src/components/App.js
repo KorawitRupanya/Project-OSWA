@@ -19,7 +19,7 @@ class App extends Component {
               <ProfileTemplate />
             </Col>
             <Col id="second-col" md={8}>
-              <AuctionPageTemplate />
+              <AllProductCard />
             </Col>
           </Row>
         </Grid>
