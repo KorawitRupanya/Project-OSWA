@@ -8,8 +8,6 @@ import {
 } from "react-bootstrap";
 import "../css/ProductCardTemplate.css";
 
-import pic from "../pictures/watch.png";
-
 class ProductCardTemplate extends Component {
   render() {
     const popover = (
@@ -24,7 +22,7 @@ class ProductCardTemplate extends Component {
       <Col id="product-card" xs={4} md={3}>
         <OverlayTrigger overlay={popover}>
           <a href="#popover">
-            <Thumbnail src={pic}>
+            <Thumbnail src={"https://i.ibb.co/jDjVCkS/watch.png"}>
               <h3 className="product-card-caption">Watch</h3>
               <p>Bidding Today at 15:00</p>
               <Button bsStyle="primary">Learn more</Button>
