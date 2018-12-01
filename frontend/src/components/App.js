@@ -9,9 +9,7 @@ import { getFirebaseData } from "../../../backend/getFirebaseData";
 
 class App extends Component {
   render() {
-    console.log("render app");
     getFirebaseData();
-    console.log("render html");
     return (
       <div className="App">
         <AuctionNav role="navigation" />
