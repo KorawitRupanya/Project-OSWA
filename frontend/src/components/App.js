@@ -5,11 +5,11 @@ import AllProductCard from "./AllProductCard";
 import ProfileTemplate from "./profile-template";
 import { Grid, Row, Col } from "react-bootstrap";
 import "../css/App.css";
-import { getFirebaseData } from "../../../backend/getFirebaseData";
+import { waitData } from "../../../backend/getFirebaseData";
 
 class App extends Component {
   render() {
-    getFirebaseData();
+    waitData();
     return (
       <div className="App">
         <AuctionNav role="navigation" />
