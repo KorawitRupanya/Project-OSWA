@@ -14,7 +14,7 @@ import "../css/AuctionNav.css";
 class AuctionNav extends Component {
   render() {
     return (
-      <Navbar inverse collapseOnSelect>
+      <Navbar inverse collapseOnSelect id="my-nav">
         <Navbar.Header>
           <Navbar.Brand>
             <strong>OSWA</strong>

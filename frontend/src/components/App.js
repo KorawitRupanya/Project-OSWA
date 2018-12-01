@@ -13,13 +13,13 @@ class App extends Component {
     return (
       <div className="App">
         <AuctionNav role="navigation" />
-        <Grid fluid>
+        <Grid fluid style={{zIndex: "1"}}>
           <Row className="show-grid">
-            <Col id="first-col" md={3}>
+            <Col id="first-col" md={3} style={{marginTop: "60px"}}>
               <ProfileTemplate />
             </Col>
             <Col id="second-col" md={8}>
-              <AllProductCard />
+              <AuctionPageTemplate />
             </Col>
           </Row>
         </Grid>
