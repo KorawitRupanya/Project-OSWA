@@ -67,7 +67,7 @@ class BiddingDetail extends Component {
           </Col>
           <Col md={5}>
             <Button id="bid-btn" bsStyle="warning" bsSize="large">
-              <strong>:: Place bid ::</strong>
+              <strong style={{ color: "white" }}>:: Place bid ::</strong>
             </Button>
           </Col>
         </Row>
