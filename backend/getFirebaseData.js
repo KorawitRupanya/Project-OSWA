@@ -6,13 +6,7 @@ var price = [];
 var time = [];
 var id = [];
 
-function getFirebaseData(){
-    localStorage.removeItem('produceName');
-    localStorage.removeItem('detail');
-    localStorage.removeItem('price');
-    localStorage.removeItem('time');
-    localStorage.removeItem('id');
-    
+function getFirebaseData(){    
     var valueCheck;
 
     var ref = database.ref("auction_cards");
@@ -47,7 +41,12 @@ function getFirebaseData(){
 
 function waitData() {
     if ( getFirebaseData() ) {
-        console.log(productName);
+        localStorage.removeItem('produceName');
+        localStorage.removeItem('detail');
+        localStorage.removeItem('price');
+        localStorage.removeItem('time');
+        localStorage.removeItem('id');
+        
         localStorage.setItem('produceName', productName);
         localStorage.setItem('detail', detail);
         localStorage.setItem('price', price);

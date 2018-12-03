@@ -1,7 +1,5 @@
-require("babel-polyfill");
-
 module.exports = {
-  entry: ['babel-polyfill'],
+
 
   module: {
     rules: [
@@ -32,5 +30,5 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
 };
