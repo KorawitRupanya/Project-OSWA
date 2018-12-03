@@ -1,5 +1,7 @@
 # Project-OSWA
+
 [![Build Status](https://travis-ci.com/KorawitRupanya/Project-OSWA.svg?branch=master)](https://travis-ci.com/KorawitRupanya/Project-OSWA)
+
 ## Description
 
 Since the street wear is upcoming trends nowaday, so we came out with an idea that is to do an e-auction web application.By using this application, user be able to join the others bidding and also can create their own auction. The application is look like the well-know web like ebay-auction.
@@ -10,9 +12,10 @@ Trello board: [Trello](https://trello.com/b/myhM5Ihs)</br>
 [Iteration Plan](https://github.com/KorawitRupanya/Project-OSWA/wiki/Plan)
 
 ## Require
+
 [python](https://www.python.org/downloads/),
 [django](https://www.djangoproject.com/download/),
-[npm](https://www.npmjs.com/get-npm) 
+[npm](https://www.npmjs.com/get-npm)
 
 ## How to install and run our project locally?
 
@@ -38,12 +41,19 @@ Then, node_modules folder will appear on our project directory.</br>
 
 <hr>
 
-**3.** You can run our webpage on your browser with `localhost:8000` by using command
+**3.** Build a static folder by using command
+
+```
+npm run dev
+```
+
+<hr>
+
+**4.** You can run our webpage on your browser with `localhost:8000` by using command
 
 ```
 python manage.py runserver
 ```
-
 
 ## Developers
 
