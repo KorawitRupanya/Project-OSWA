@@ -22,7 +22,7 @@ class CreateProductCard extends Component {
   }
 
   handleClick() {
-    console.log("click");
+    console.log("product card temp: click");
     var element = document.getElementById("main-components-root");
     element.parentNode.removeChild(element);
     var auction = document.createElement("div");
