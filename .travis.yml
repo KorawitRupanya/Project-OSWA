@@ -14,7 +14,7 @@ env:
   - TRAVIS_SECURE_ENV_VARS=true
 
 script:
-  - coverage run manage.py test backend
+  - coverage run manage.py test 
 
 after_success:
   - codecov
