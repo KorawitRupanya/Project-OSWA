@@ -19,7 +19,8 @@ class App extends Component {
               <ProfileTemplate />
             </Col>
             <Col id="second-col" md={8}>
-              <AllProductCard />
+              {/* <AllProductCard /> */}
+              <AuctionPageTemplate />
             </Col>
           </Row>
         </Grid>

@@ -13,12 +13,14 @@ class AllProductCard extends Component {
     const price = localStorage.getItem('price');
     const time = localStorage.getItem('time');
     const id = localStorage.getItem('id');
+    const currentUser = localStorage.getItem('current');
 
     let produceNameArray;
     let detailArray;
     let priceArray;
     let timeArray;
     let idArray;
+    let currentUserArray;
 
     if(produceName == null) return  <h2 style={{ color: "orange" }}>Loading...</h2>
     else{
@@ -27,6 +29,7 @@ class AllProductCard extends Component {
       priceArray = decodeTextArray(price);
       timeArray = decodeNumArray(time);
       idArray = decodeTextArray(id);
+      currentArray = decodeTextArray(currentUser);
       
       try{
         while(produceNameArray.length != 0){

@@ -21,7 +21,7 @@ def postAuctionCard(request):
     if checkProduceName and checkDetail and checkPrice:
         ts = time.time()
     try:
-        result = firebase.post('auction_cards', {'productName': productName,'detail': detail, 'price': price, 'timestamp': ts})
+        result = firebase.post('auction_cards', {'productName': productName,'detail': detail, 'price': price, 'timestamp': ts, 'currentUser' : "-----"})
         print(result)
     except:
         message = "invalid cerediantials"

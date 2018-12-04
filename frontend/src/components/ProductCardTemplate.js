@@ -23,7 +23,7 @@ class CreateProductCard extends Component{
 
   render(){
     const popover = (
-      <Popover id="modal-popover" title="XX-RATED BLACK">
+      <Popover id="modal-popover" title="Auction Product">
         {this.props.time} <br />
         Starting price at {this.props.startingPrice}.
         <br />

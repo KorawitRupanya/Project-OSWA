@@ -5,6 +5,7 @@ var detail = [];
 var price = [];
 var time = [];
 var id = [];
+var currentUser = [];
 
 function getFirebaseData(){    
     var valueCheck;
@@ -24,6 +25,7 @@ function getFirebaseData(){
                     detail.push(childData.detail);
                     price.push(childData.price);
                     time.push(childData.timestamp);
+                    currentUser.push(chilldData.currentUser);
                 }
   
             } else {
@@ -46,12 +48,14 @@ function waitData() {
         localStorage.removeItem('price');
         localStorage.removeItem('time');
         localStorage.removeItem('id');
+        localStorage.removeItem('currentUser');
         
         localStorage.setItem('produceName', productName);
         localStorage.setItem('detail', detail);
         localStorage.setItem('price', price);
         localStorage.setItem('time', time);
         localStorage.setItem('id', id);
+        localStorage.setItem('currentUser', currentUser);
     } else {
         setTimeout( waitData, 500 );
     }
@@ -65,5 +69,6 @@ export{
     price,
     time,
     id,
+    currentUser,
     waitData
 };
