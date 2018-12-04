@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import CreateProductCard from "./ProductCardTemplate";
-import AddBtn from "./AddBtn";
 import { Grid, Row } from "react-bootstrap";
 
 class AllProductCard extends Component {
@@ -54,7 +53,7 @@ class AllProductCard extends Component {
 
   render() {
     return (
-      <Grid fluid>
+      <Grid style={{ height: "100vh" }} fluid>
         <Row className="show-grid">{this.AllCards()}</Row>
       </Grid>
     );

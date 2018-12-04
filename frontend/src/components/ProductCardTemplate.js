@@ -32,7 +32,7 @@ class CreateProductCard extends Component {
       <AuctionPageTemplate
         productName={this.props.productName}
         detail={this.props.detail}
-        startingPrice={this.props.price}
+        currentPrice={this.props.price}
         time={this.props.date}
       />,
       document.getElementById("main-components-root")

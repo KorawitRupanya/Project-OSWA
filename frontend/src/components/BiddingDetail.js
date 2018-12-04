@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import { Row, Col, Button } from "react-bootstrap";
 import "../css/BiddingDetail.css";
-import {auth, database} from "../../../backend/firebase";
+import { auth, database } from "../../../backend/firebase";
 
 class BiddingDetail extends Component {
-  constructor(startPrice, biddingPrice, biddingTime) {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      suggest_price: 10, //startPrice
+      suggest_price: this.props.currentPrice, //startPrice
       bidding_price: 100, //biddingPrice
       bidding_time: 15 //biddingTime
     };
   }
 
-  placeBid = (e) => {
+  placeBid = e => {
     e.preventDefault();
     var user = auth.currentUser;
 
@@ -23,14 +23,14 @@ class BiddingDetail extends Component {
       var currentPrice = parseInt(this.props.currentPrice);
       var bidPrice = this.state.suggest_price;
 
-      if(bidPrice > currentPrice){
+      if (bidPrice > currentPrice) {
         var produceID = this.props.productID;
         var productRef = database.ref("auction_cards/" + produceID);
-  
-        productRef.update({'price': bidPrice, 'currentUser': user.email});
+
+        productRef.update({ price: bidPrice, currentUser: user.email });
       }
     }
- }
+  };
 
   onClickDecreaseButton = () => {
     var suggestPrice = this.state.suggest_price,
@@ -89,7 +89,12 @@ class BiddingDetail extends Component {
             </div>
           </Col>
           <Col md={5}>
-            <Button id="bid-btn" bsStyle="warning" bsSize="large" onClick={(evt) => this.placeBid(evt)}>
+            <Button
+              id="bid-btn"
+              bsStyle="warning"
+              bsSize="large"
+              onClick={evt => this.placeBid(evt)}
+            >
               <strong style={{ color: "white" }}>:: Place bid ::</strong>
             </Button>
           </Col>

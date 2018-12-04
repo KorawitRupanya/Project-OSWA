@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Col, Well, Row } from "react-bootstrap";
 import ImageSlideshow from "./ImageSlideshow";
 import BiddingDetail from "./BiddingDetail";
-import BiddingPriceBox from "./BiddingPriceBox";
 import ProductDetail from "./ProductDetail";
 import Timer from "./Timer";
 import "../css/AuctionPageTemplate.css";
