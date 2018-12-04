@@ -46,8 +46,6 @@ def requestAuctionCard(request):
         auction_card = auctionCards.make_card(productname, detail, price, time)
         auction_cards.append(auction_card)
 
-    for auction_card in auction_cards: print(auction_card)
-
     return render(request, 'check.html', {'products': auction_cards, 'n': n})
 
 
