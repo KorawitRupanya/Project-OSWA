@@ -34,7 +34,6 @@ class AllProductCard extends Component {
       try{
         while(produceNameArray.length != 0){
           var date = new Date(timeArray.pop() * 1000);
-          console.log(date);
           allCards.push(
           <CreateProductCard produceName={produceNameArray.pop()} 
           detail={detailArray.pop()}
@@ -56,10 +55,11 @@ class AllProductCard extends Component {
   
     return (
       <Grid fluid>
-        <Row className="show-grid">
-           {this.AllCards()}
-        </Row>
-      </Grid>
+      <AddBtn />
+      <Row className="show-grid">
+         {this.AllCards()}
+      </Row>
+    </Grid>
     );
   }
 }

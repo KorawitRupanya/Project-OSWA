@@ -30,6 +30,11 @@
         <!-- Price: -->
         <input class="box" type="number" name="price" placeholder="   Price" />
         <br />
+        Uplaod pictures:
+        <input type="file" name="files[]" id="files">
+        <input type="hidden" name="url" id="url">
+        <button type="button" onclick="uploadimage()">Upload</button>
+        <br />
         <button class="button" type="submit" value="submit">Submit</button>
       </form>
 
@@ -38,6 +43,41 @@
       </form>
     </div>
   </body>
+
+  <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+<script>
+  const config = {
+    apiKey: "AIzaSyCWM-I_DIDeaPsgT9J-Au642IXIgrXFLfg",
+    authDomain: "project-oswa.firebaseapp.com",
+    databaseURL: "https://project-oswa.firebaseio.com",
+    projectId: "project-oswa",
+    storageBucket: "project-oswa.appspot.com",
+    messagingSenderId: "310719142567"
+  };
+
+  var app =  firebase.initializeApp(config);
+  // Get a reference to the storage service, which is used to create references in your storage bucket
+  function uploadimage(){
+
+    var file = document.getElementById("files").files[0];
+    var ref = firebase.storage().ref();
+    
+    var task = ref.child(file.name).put(file);
+
+    // task.then((snapshot) => {
+    // console.log("upload" + snapshot.downloadURL); 
+    // }),
+    // function(error) {
+    // };
+  //   function() {
+  //   // Upload completed successfully, now we can get the download URL
+  //   var downloadURL = task.snapshot.downloadURL;
+  //   console.log("got url");
+  //   document.getElementById("url").value = downloadURL;
+  //   alert("file uploaded successfully");
+  // };
+    }
+</script>
 </html>
 <style>
   body {
