@@ -15,6 +15,9 @@ def postAuctionCard(request):
     price = request.POST.get("price")
     url = request.POST.get("url")
 
+    if url is None or url is "": url = "None"
+    
+
     checkProduceName = productName is not None and productName is not ""
     checkDetail = detail is not None and detail is not ""
     checkPrice = price is not None and price is not ""

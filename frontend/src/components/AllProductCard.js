@@ -12,6 +12,7 @@ class AllProductCard extends Component {
     const time = localStorage.getItem("time");
     const id = localStorage.getItem("id");
     const currentUser = localStorage.getItem("currentUser");
+    const url = localStorage.getItem("url");
 
     let productNameArray;
     let detailArray;
@@ -19,7 +20,7 @@ class AllProductCard extends Component {
     let timeArray;
     let idArray;
     let currentUserArray;
-
+    let urlArray;
     if (productName == null)
       return <h2 style={{ color: "orange" }}>Loading...</h2>;
     else {
@@ -29,6 +30,7 @@ class AllProductCard extends Component {
       timeArray = decodeNumArray(time);
       idArray = decodeTextArray(id);
       currentUserArray = decodeTextArray(currentUser);
+      urlArray = decodeTextArray(url);
 
       try {
         while (productNameArray.length != 0) {
