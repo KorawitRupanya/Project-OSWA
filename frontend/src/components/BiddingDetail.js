@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Row, Col, Button } from "react-bootstrap";
-import crown from "../pictures/crown.png";
 import "../css/BiddingDetail.css";
 
 class BiddingDetail extends Component {
@@ -40,7 +39,11 @@ class BiddingDetail extends Component {
           <strong id="current-bid">250 THB</strong>
         </Row>
         <Row id="current-winner">
-          <img id="crown-pic" src={crown} alt="crown" />
+          <img
+            id="crown-pic"
+            src={"https://i.ibb.co/7grsyzL/crown.png"}
+            alt="crown"
+          />
           username.123
         </Row>
         <Row>
