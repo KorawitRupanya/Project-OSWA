@@ -27,9 +27,13 @@ class AuctionPageTemplate extends Component {
               <div className="vl" />
             </Col>
             <Col id="bidding-detail" md={6}>
-              <h1 id="product-name">{this.props.produceName}</h1>
-                {/*edit this when conect page together */}
-              <BiddingDetail currentPrice = {this.props.price} currentUser={this.props.currentUser} productID = {this.props.productID}/>
+              <h1 id="product-name">{this.props.productName}</h1>
+              {/*edit this when conect page together */}
+              <BiddingDetail
+                currentPrice={this.props.price}
+                currentUser={this.props.currentUser}
+                productID={this.props.productID}
+              />
             </Col>
           </Row>
         </Well>
