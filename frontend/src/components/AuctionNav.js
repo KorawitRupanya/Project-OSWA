@@ -14,14 +14,14 @@ import "../css/AuctionNav.css";
 class AuctionNav extends Component {
   render() {
     return (
-      <Navbar inverse collapseOnSelect>
+      <Navbar inverse collapseOnSelect id="my-nav">
         <Navbar.Header>
           <Navbar.Brand>
             <strong>OSWA</strong>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
-        <Navbar.Collapse>
+        <Navbar.Collapse style={{ width: "1440px" }}>
           <Nav>
             <NavItem id="item" eventKey={1} href="#">
               Home

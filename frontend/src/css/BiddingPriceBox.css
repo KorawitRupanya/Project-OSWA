@@ -1,9 +1,14 @@
-#header {
-  color: orange;
+#my-header {
   margin-left: 10px;
 }
 
+#sub {
+  color: orange;
+}
+
 #table {
+  background: #20201e;
+  color: white;
   width: 800px;
   margin-left: 45px;
 }

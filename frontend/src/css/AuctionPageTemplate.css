@@ -3,6 +3,7 @@
 }
 
 #image-slideshow {
+  z-index: 0;
   margin-left: 20px;
 }
 

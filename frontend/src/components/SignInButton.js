@@ -119,7 +119,7 @@ class SignInBar extends Component {
             </form>
         </div>
       );
-    }  else if (signUpClicked) {
+    } else if (signUpClicked) {
       return (
           <div>
             <form>

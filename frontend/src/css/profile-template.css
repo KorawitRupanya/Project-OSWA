@@ -1,8 +1,11 @@
 #plate{
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
     width: 287px;
     height: 700px;
     text-align: left;
     padding: 20px;
+    position: fixed;
 }
 #image {
     width: 250px;

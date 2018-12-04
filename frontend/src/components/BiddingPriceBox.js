@@ -6,12 +6,12 @@ class BiddingPriceBox extends Component {
   render() {
     return (
       <Table responsive id="table">
-        <thead id="header">
-          <tr>
-            <th>#</th>
-            <th>Username</th>
-            <th>Price</th>
-            <th>Timestamp</th>
+        <thead>
+          <tr id="my-header">
+            <th id="sub">#</th>
+            <th id="sub">Username</th>
+            <th id="sub">Price</th>
+            <th id="sub">Timestamp</th>
           </tr>
         </thead>
         <tbody>
