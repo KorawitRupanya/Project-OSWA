@@ -13,7 +13,7 @@ class AllProductCard extends Component {
     const price = localStorage.getItem('price');
     const time = localStorage.getItem('time');
     const id = localStorage.getItem('id');
-    const currentUser = localStorage.getItem('current');
+    const currentUser = localStorage.getItem('currentUser');
 
     let produceNameArray;
     let detailArray;
@@ -29,7 +29,7 @@ class AllProductCard extends Component {
       priceArray = decodeTextArray(price);
       timeArray = decodeNumArray(time);
       idArray = decodeTextArray(id);
-      currentArray = decodeTextArray(currentUser);
+      currentUserArray = decodeTextArray(currentUser);
       
       try{
         while(produceNameArray.length != 0){
@@ -56,7 +56,6 @@ class AllProductCard extends Component {
   
     return (
       <Grid fluid>
-        <AddBtn />
         <Row className="show-grid">
            {this.AllCards()}
         </Row>

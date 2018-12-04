@@ -18,8 +18,7 @@ class BiddingDetail extends Component {
     var user = auth.currentUser;
 
     if (user != null) {
-      console.log("Email: " + user.email); //email that user sign up
-      console.log("place: " + this.state.suggest_price);
+      // console.log("Email: " + user.email); //email that user sign up
 
       var currentPrice = parseInt(this.props.currentPrice);
       var bidPrice = this.state.suggest_price;
@@ -28,7 +27,7 @@ class BiddingDetail extends Component {
         var produceID = this.props.productID;
         var productRef = database.ref("auction_cards/" + produceID);
   
-        productRef.update({'price': bidPrice});
+        productRef.update({'price': bidPrice, 'currentUser': user.email});
       }
     }
  }

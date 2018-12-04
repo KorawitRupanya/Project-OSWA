@@ -25,7 +25,7 @@ function getFirebaseData(){
                     detail.push(childData.detail);
                     price.push(childData.price);
                     time.push(childData.timestamp);
-                    currentUser.push(chilldData.currentUser);
+                    currentUser.push(childData.currentUser);
                 }
   
             } else {
