@@ -22,7 +22,7 @@ class CreateProductCard extends Component {
   }
 
   handleClick() {
-    console.log("product card temp: click");
+ 
     var element = document.getElementById("main-components-root");
     element.parentNode.removeChild(element);
     var auction = document.createElement("div");
@@ -32,21 +32,20 @@ class CreateProductCard extends Component {
       <AuctionPageTemplate
         productName={this.props.productName}
         detail={this.props.detail}
-        currentPrice={this.props.price}
-        time={this.props.date}
+        price={this.props.startingPrice}
+        time={this.props.time}
+        currentUser={this.props.currentUser}
+        productID={this.props.productID}
       />,
       document.getElementById("main-components-root")
     );
-    console.log("name: " + this.props.productName);
-    console.log("detail: " + this.props.detail);
-    console.log("price: " + this.props.startingPrice);
-    console.log("time: " + this.props.time);
   }
 
   render() {
+
     const popover = (
       <Popover id="modal-popover" title="Auction Product">
-        {this.props.time} <br />
+        {this.props.date} <br />
         Starting price at {this.props.startingPrice}.
         <br />
         {this.props.detail}
@@ -62,7 +61,7 @@ class CreateProductCard extends Component {
                 <h3 className="product-card-caption">
                   {this.props.productName}
                 </h3>
-                <p>{this.props.time}</p>
+                <p>{this.props.date}</p>
                 <Button bsStyle="primary" onClick={this.handleClick}>
                   Bid this!
                 </Button>

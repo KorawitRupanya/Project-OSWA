@@ -7,7 +7,7 @@ class BiddingDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      suggest_price: this.props.currentPrice, //startPrice
+      suggest_price: parseInt(this.props.currentPrice), //startPrice
       bidding_price: 100, //biddingPrice
       bidding_time: 15 //biddingTime
     };

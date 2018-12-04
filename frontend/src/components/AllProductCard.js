@@ -32,13 +32,17 @@ class AllProductCard extends Component {
 
       try {
         while (productNameArray.length != 0) {
-          var date = new Date(timeArray.pop() * 1000);
+          var dateTime = timeArray.pop();
+          var date = new Date(dateTime * 1000);
           allCards.push(
             <CreateProductCard
               productName={productNameArray.pop()}
               detail={detailArray.pop()}
               startingPrice={priceArray.pop()}
-              time={date.toString()}
+              date={date.toString()}
+              time={dateTime}
+              currentUser={currentUserArray.pop()}
+              productID={idArray.pop()}
             />
           );
         }
