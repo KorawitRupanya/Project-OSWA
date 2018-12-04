@@ -6,7 +6,8 @@
   "scripts": {
     "start": "react-scripts start",
     "dev": "webpack --mode development ./frontend/src/index.js --output ./frontend/static/main.js",
-    "build": "webpack --mode production ./frontend/src/index.js --output ./frontend/static/main.js"
+    "build": "webpack --mode production ./frontend/src/index.js --output ./frontend/static/main.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -15,11 +16,16 @@
     "@babel/core": "^7.1.5",
     "@babel/preset-env": "^7.1.5",
     "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^23.6.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
+    "react-test-renderer": "^16.6.3",
     "webpack-cli": "^3.1.2"
   },
   "dependencies": {
