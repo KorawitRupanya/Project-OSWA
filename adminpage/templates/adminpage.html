@@ -11,192 +11,187 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
     <script type="text/babel">
-          import React, { Component } from "react";
-          import {
-            Popover,
-            Button,
-            Modal,
-            OverlayTrigger,
-            Navbar,
-            FormControl,
-            Row,
-            Col
-          } from "react-bootstrap";
-          import "../css/AddBtn.css";
-          class AdminPage extends React.Component {
-              fileSelectHolder = event => {
-        this.setState({
-          selectedFile: event.target.file[0]
-        });
-      };
-      fileUploadHolder = () => {};
-
-      constructor(props, context) {
-        super(props, context);
-
-        this.handleShow = this.handleShow.bind(this);
-        this.handleClose = this.handleClose.bind(this);
-
-        this.state = {
-          show: false
+      class AdminPage extends React.Component {
+        fileSelectHolder = event => {
+          this.setState({
+            selectedFile: event.target.file[0]
+          });
         };
+        fileUploadHolder = () => {};
+
+        constructor(props, context) {
+          super(props, context);
+          this.state = {
+            show: false,
+            minutes: "",
+            hour: "",
+            bidding_price: "",
+            product_name: ""
+          };
+          this.handleChangeHr = this.handleChangeHr.bind(this);
+          this.handleChangeMin = this.handleChangeMin.bind(this);
+          this.handleChangePrice = this.handleChangePrice.bind(this);
+          this.handleChangeName = this.handleChangeName.bind(this);
+        }
+
+        handleChangeHr(event) {
+          this.setState({
+            hour: event.target.value
+          });
+        }
+
+        handleChangeMin(event) {
+          this.setState({
+            minutes: event.target.value
+          });
+        }
+
+        handleChangePrice(event) {
+          this.setState({
+            bidding_price: event.target.value
+          });
+        }
+
+        handleChangeName(event) {
+          this.setState({
+            product_name: event.target.value
+          });
+        }
+
+        render() {
+          return (
+            <div className="block">
+              <h1 id="head-one">Add Product Page</h1>
+              <form action="/adminpage/" method="post">
+                {/*ProductName:*/}
+                <input
+                  className="box"
+                  type="text"
+                  name="productName"
+                  placeholder="ProductName"
+                  onChange={this.handleChangeName}
+                />
+                <br />
+                {/*Details:*/}
+                <input
+                  className="box"
+                  type="text"
+                  name="detail"
+                  placeholder="Detail"
+                />
+                <br />
+                {/*Price:*/}
+                <input
+                  className="box"
+                  type="number"
+                  name="price"
+                  placeholder="Price"
+                  onChange={this.handleChangePrice}
+                />
+                <br />
+                {/*Time:*/}
+                <div className="row">
+                  <div className="column" id="column1">
+                    {" "}
+                    Bidding Time
+                  </div>
+                  <div className="column" id="column2">
+                    <input
+                      className="box-t"
+                      type="number"
+                      placeholder="hh"
+                      hour={this.state.hour}
+                      onChange={this.state.handleChangeHr}
+                      required
+                    />
+                    <input
+                      className="box-t"
+                      type="number"
+                      placeholder="mm"
+                      minutes={this.state.minutes}
+                      onChange={this.state.handleChangeMin}
+                      required
+                    />
+                  </div>
+                </div>
+                <br />
+                {/*Picture:*/}
+                <div className="row">
+                  <div className="column" id="column3">
+                    {" "}
+                    Upload Pictures
+                  </div>
+                  <div className="column" id="column4">
+                    <input type="file" onChange={this.fileHolder} />
+                  </div>
+                </div>
+                <br />
+                <button
+                  className="button"
+                  type="submit"
+                  value="submit"
+                  disabled={
+                    this.state.hour === "" ||
+                    this.state.minutes === "" ||
+                    this.state.bidding_price === "" ||
+                    this.state.product_name === "" ||
+                    this.state.hour < 0 ||
+                    this.state.minutes < 0 ||
+                    this.state.bidding_price <= 0
+                  }
+                >
+                  Create
+                </button>
+              </form>
+
+              <form action="/adminpage/check/">
+                <button className="button" type="submit" value="check">
+                  Check
+                </button>
+              </form>
+            </div>
+          );
+        }
       }
-
-      handleClose() {
-        this.setState({ show: false });
-      }
-
-      handleShow() {
-        this.setState({ show: true });
-      }
-
-      render() {
-        const popover = (
-          <Popover id="modal-popover" title="Terms and conditions">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum.
-          </Popover>
-        );
-
-        return (
-          <div>
-            <Button
-              id="main-btn"
-              bsStyle="warning"
-              bsSize="large"
-              onClick={this.handleShow}
-            >
-              Create new...
-            </Button>
-
-            <Modal show={this.state.show} onHide={this.handleClose}>
-              <Modal.Header closeButton>
-                <Modal.Title>Create a new product card</Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-                {/* <h4>Text in a modal</h4> */}
-                <Navbar>
-                  <Row>
-                    <Navbar.Form pullLeft>
-                      <FormControl
-                        id="input-name-area"
-                        type="name"
-                        placeholder="Product Name"
-                      />
-                    </Navbar.Form>
-                  </Row>
-                  <Row>
-                    <Navbar.Form pullLeft>
-                      <FormControl
-                        id="input-details-area"
-                        type="details"
-                        placeholder="details..."
-                      />
-                    </Navbar.Form>
-                  </Row>
-                  <Row>
-                    <Navbar.Form>
-                      <FormControl
-                        id="input-time-area"
-                        type="time"
-                        placeholder="bidding time"
-                      />
-                    </Navbar.Form>
-                  </Row>
-                  <Row>
-                    <Navbar.Form>
-                      <FormControl
-                        id="input-bidding-price-area"
-                        type="text"
-                        placeholder="bidding price"
-                      />
-                    </Navbar.Form>
-                  </Row>
-                  <Row>
-                    <Navbar.Form>
-                      <Row>
-                        <Col md={2}>
-                          <input type="file" onChange={this.fileHolder} />{" "}
-                        </Col>
-                        <Col md={3} style={{ marginLeft: "250px" }}>
-                          <Button onClick={this.fileHolder} id="upload-button">
-                            Upload
-                          </Button>
-                        </Col>
-                      </Row>
-                    </Navbar.Form>
-                  </Row>
-                </Navbar>
-
-                <h5>Please read terms and conditions before place an auction.</h5>
-
-                <p>
-                  <OverlayTrigger overlay={popover}>
-                    <a href="#popover">Terms and conditions.</a>
-                  </OverlayTrigger>{" "}
-                </p>
-                <hr />
-              </Modal.Body>
-              <Modal.Footer>
-                <Button onClick={this.handleClose}>Close</Button>
-              </Modal.Footer>
-            </Modal>
-          </div>
-        );
-      }
-          //   render() {
-          //     return (
-          //       <div className="block">
-          //         <h1 id="head-one">Add Product Page</h1>
-          //         <form action="/adminpage/" method="post">
-          //           {/*ProductName:*/}
-          //           <input
-          //             className="box"
-          //             type="text"
-          //             name="productName"
-          //             placeholder="   ProductName"
-          //           />
-          //           <br />
-          //           {/*Details:*/}
-          //           <input
-          //             className="box"
-          //             type="text"
-          //             name="detail"
-          //             placeholder="   Detail"
-          //           />
-          //           <br />
-          //           {/*Price:*/}
-          //           <input
-          //             className="box"
-          //             type="number"
-          //             name="price"
-          //             placeholder="   Price"
-          //           />
-          //           <br />
-          //           <button className="button" type="submit" value="submit">
-          //             Submit
-          //           </button>
-          //         </form>
-
-          //         <form action="/adminpage/check/">
-          //           <button className="button" type="submit" value="check">
-          //             Check
-          //           </button>
-          //         </form>
-          //       </div>
-          //     );
-          //   }
-          // }
-          ReactDOM.render(<AdminPage />, document.getElementById("sub-root"));
+      ReactDOM.render(<AdminPage />, document.getElementById("sub-root"));
     </script>
   </body>
 </html>
 <style>
+  #column1 {
+    float: left;
+    width: 180px;
+    height: 45px;
+    font-size: 30px;
+    color: white;
+    margin-left: 35px;
+  }
+  #column2 {
+    text-align: left;
+    float: left;
+    width: 200px;
+    height: 45px;
+  }
+  #column3 {
+    float: left;
+    width: 220px;
+    height: 45px;
+    font-size: 30px;
+    color: white;
+    margin-left: 40px;
+  }
+  #column4 {
+    margin-left: 20px;
+    text-align: left;
+    float: left;
+    width: 200px;
+    height: 45px;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
   body {
     cursor: url("https://i.ibb.co/RCN81x1/mono-Cur-2.png"), auto;
     text-align: center;
@@ -207,7 +202,7 @@
     border-radius: 50px;
     display: block;
     width: 600px;
-    height: 500px;
+    height: 600px;
     border: none;
     /* background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%); */
     background-image: linear-gradient(
@@ -239,6 +234,17 @@
     cursor: url("https://i.ibb.co/RCN81x1/mono-Cur-2.png"), auto;
     outline: none;
   }
+  .box-t {
+    font-size: 20px;
+    padding: 5px;
+    margin-bottom: 5%;
+    border-radius: 50px;
+    line-height: 2;
+    height: 25px;
+    width: 50px;
+    cursor: url("https://i.ibb.co/RCN81x1/mono-Cur-2.png"), auto;
+    outline: none;
+  }
   .button {
     background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
     font-size: 20px;
@@ -252,6 +258,9 @@
     cursor: url("https://i.ibb.co/RCN81x1/mono-Cur-2.png"), auto;
     outline: none;
     border: none;
+  }
+  .button:disabled {
+    cursor: not-allowed;
   }
   .button:hover {
     background: none;
