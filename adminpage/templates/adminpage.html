@@ -22,40 +22,60 @@
         constructor(props, context) {
           super(props, context);
           this.state = {
-            show: false,
             minutes: "",
             hour: "",
-            bidding_price: "",
-            product_name: ""
+            biddingprice: "",
+            productname: "",
+            productdetail: ""
           };
           this.handleChangeHr = this.handleChangeHr.bind(this);
           this.handleChangeMin = this.handleChangeMin.bind(this);
           this.handleChangePrice = this.handleChangePrice.bind(this);
           this.handleChangeName = this.handleChangeName.bind(this);
+          this.handleChangeDetail = this.handleChangeName.bind(this);
+          this.print = this.print.bind(this);
+        }
+
+        print() {
+          console.log("h: " + this.state.hour + "m: " + this.state.minutes);
+          console.log("name: " + this.state.productName);
+          console.log("price: " + this.state.biddingprice);
+          console.log("detail: " + this.state.productdetail);
         }
 
         handleChangeHr(event) {
           this.setState({
             hour: event.target.value
           });
+          console.log("h: " + this.state.hour + "m: " + this.state.minutes);
         }
 
         handleChangeMin(event) {
           this.setState({
             minutes: event.target.value
           });
+          console.log("h: " + this.state.hour + "m: " + this.state.minutes);
         }
 
         handleChangePrice(event) {
           this.setState({
-            bidding_price: event.target.value
+            biddingprice: event.target.value
           });
+          console.log("price: " + this.state.biddingprice);
         }
 
         handleChangeName(event) {
           this.setState({
-            product_name: event.target.value
+            productname: event.target.value
           });
+          console.log("name: " + this.state.productName);
+        }
+
+        handleChangeDetail(event) {
+          this.setState({
+            productdetail: event.target.value
+          });
+          console.log("detail: " + this.state.productdetail);
         }
 
         render() {
@@ -70,6 +90,7 @@
                   name="productName"
                   placeholder="ProductName"
                   onChange={this.handleChangeName}
+                  required
                 />
                 <br />
                 {/*Details:*/}
@@ -78,6 +99,7 @@
                   type="text"
                   name="detail"
                   placeholder="Detail"
+                  onChange={this.handleChangeDetail}
                 />
                 <br />
                 {/*Price:*/}
@@ -87,6 +109,7 @@
                   name="price"
                   placeholder="Price"
                   onChange={this.handleChangePrice}
+                  required
                 />
                 <br />
                 {/*Time:*/}
@@ -100,16 +123,14 @@
                       className="box-t"
                       type="number"
                       placeholder="hh"
-                      hour={this.state.hour}
-                      onChange={this.state.handleChangeHr}
+                      onChange={this.handleChangeHr}
                       required
                     />
                     <input
                       className="box-t"
                       type="number"
                       placeholder="mm"
-                      minutes={this.state.minutes}
-                      onChange={this.state.handleChangeMin}
+                      onChange={this.handleChangeMin}
                       required
                     />
                   </div>
@@ -137,14 +158,23 @@
                   disabled={
                     this.state.hour === "" ||
                     this.state.minutes === "" ||
-                    this.state.bidding_price === "" ||
-                    this.state.product_name === "" ||
+                    this.state.biddingprice === "" ||
+                    this.state.productname === "" ||
                     this.state.hour < 0 ||
                     this.state.minutes < 0 ||
-                    this.state.bidding_price <= 0
+                    this.state.minutes >= 60 ||
+                    this.state.bidding_price < 0
                   }
                 >
                   Create
+                </button>
+                <button
+                  className="button"
+                  type="submit"
+                  value="submit"
+                  onClick={this.print}
+                >
+                  Test
                 </button>
               </form>
 
@@ -169,7 +199,7 @@
     float: left;
     width: 180px;
     height: 45px;
-    font-size: 30px;
+    font-size: 20px;
     color: white;
     margin-left: 35px;
   }
@@ -183,7 +213,7 @@
     float: left;
     width: 220px;
     height: 45px;
-    font-size: 30px;
+    font-size: 20px;
     color: white;
     margin-left: 40px;
   }
