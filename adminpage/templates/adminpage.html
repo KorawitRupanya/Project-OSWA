@@ -122,7 +122,11 @@
                     Upload Pictures
                   </div>
                   <div className="column" id="column4">
-                    <input type="file" onChange={this.fileHolder} />
+                    <input
+                      id="picture-upload"
+                      type="file"
+                      onChange={this.fileHolder}
+                    />
                   </div>
                 </div>
                 <br />
@@ -158,6 +162,9 @@
   </body>
 </html>
 <style>
+  #picture-upload {
+    cursor: url("https://i.ibb.co/RCN81x1/mono-Cur-2.png"), auto;
+  }
   #column1 {
     float: left;
     width: 180px;
