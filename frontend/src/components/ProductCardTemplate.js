@@ -4,36 +4,50 @@ import {
   Col,
   Thumbnail,
   OverlayTrigger,
-  Popover
+  Popover,
+  Modal,
+  Navbar,
+  FormControl,
+  Row,
 } from "react-bootstrap";
 import "../css/ProductCardTemplate.css";
-
 import pic from "../pictures/watch.png";
 
-class ProductCardTemplate extends Component {
-  render() {
+
+
+class CreateProductCard extends Component{
+
+  constructor(props, context) {
+    super(props, context);
+  }
+
+  render(){
     const popover = (
       <Popover id="modal-popover" title="XX-RATED BLACK">
-        Bidding Today at 15:00 <br />
-        Starting price at $75.
+        {this.props.time} <br />
+        Starting price at {this.props.startingPrice}.
         <br />
-        details.........
+        {this.props.detail}
       </Popover>
     );
-    return (
-      <Col id="product-card" xs={4} md={3}>
-        <OverlayTrigger overlay={popover}>
-          <a href="#popover">
-            <Thumbnail src={pic}>
-              <h3 className="product-card-caption">Watch</h3>
-              <p>Bidding Today at 15:00</p>
-              <Button bsStyle="primary">Learn more</Button>
-            </Thumbnail>
-          </a>
-        </OverlayTrigger>
-      </Col>
-    );
-  }
-}
 
-export default ProductCardTemplate;
+  return (
+    <div>
+     <Col id="product-card" xs={4} md={3}>
+     <OverlayTrigger overlay={popover}>
+       <a href="#popover">
+         <Thumbnail src={pic}>
+          <h3 className="product-card-caption">{this.props.produceName}</h3>
+          <p>{this.props.time}</p>
+           <Button bsStyle="primary">Bid this!</Button>
+        </Thumbnail>
+      </a>
+    </OverlayTrigger>
+  </Col>
+    </div>
+  );
+}
+  }
+
+
+export default CreateProductCard;
