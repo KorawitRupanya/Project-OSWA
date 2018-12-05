@@ -13,7 +13,7 @@ class AuctionPageTemplate extends Component {
 
   render() {
     return (
-      <div className="Auction-page" style={{ height: "100%" }}>
+      <div className="Auction-page">
         <div id="timer">
           <Timer />
         </div>

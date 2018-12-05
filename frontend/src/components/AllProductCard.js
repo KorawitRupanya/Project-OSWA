@@ -24,7 +24,7 @@ class AllProductCard extends Component {
 
     if (productName == null) {
       return (
-        <img src={"https://i.ibb.co/6F614DB/reallyrealone.gif"} alt="loading" />
+        <img src={"https://i.ibb.co/qBLtMKr/reallyrealone.gif"} alt="loading" />
       );
     } else {
       productNameArray = decodeTextArray(productName);
