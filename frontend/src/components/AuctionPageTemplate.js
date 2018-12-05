@@ -12,9 +12,8 @@ class AuctionPageTemplate extends Component {
   }
 
   render() {
-
     return (
-      <div className="Auction-page">
+      <div className="Auction-page" style={{ height: "100%" }}>
         <div id="timer">
           <Timer />
         </div>
@@ -40,7 +39,7 @@ class AuctionPageTemplate extends Component {
 
         <Well id="product-detail">
           <Row>
-            <ProductDetail detail = {this.props.detail}/>
+            <ProductDetail detail={this.props.detail} />
           </Row>
         </Well>
       </div>

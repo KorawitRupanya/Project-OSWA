@@ -21,9 +21,12 @@ class AllProductCard extends Component {
     let idArray;
     let currentUserArray;
     let urlArray;
-    if (productName == null)
-      return <h2 style={{ color: "orange" }}>Loading...</h2>;
-    else {
+
+    if (productName == null) {
+      return (
+        <img src={"https://i.ibb.co/6F614DB/reallyrealone.gif"} alt="loading" />
+      );
+    } else {
       productNameArray = decodeTextArray(productName);
       detailArray = decodeTextArray(detail);
       priceArray = decodeTextArray(price);

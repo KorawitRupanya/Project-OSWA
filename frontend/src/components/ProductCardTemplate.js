@@ -6,11 +6,7 @@ import {
   Col,
   Thumbnail,
   OverlayTrigger,
-  Popover,
-  Modal,
-  Navbar,
-  FormControl,
-  Row
+  Popover
 } from "react-bootstrap";
 import "../css/ProductCardTemplate.css";
 import pic from "../pictures/watch.png";
@@ -22,7 +18,6 @@ class CreateProductCard extends Component {
   }
 
   handleClick() {
- 
     var element = document.getElementById("main-components-root");
     element.parentNode.removeChild(element);
     var auction = document.createElement("div");
@@ -42,7 +37,6 @@ class CreateProductCard extends Component {
   }
 
   render() {
-
     const popover = (
       <Popover id="modal-popover" title="Auction Product">
         {this.props.date} <br />
@@ -57,12 +51,16 @@ class CreateProductCard extends Component {
         <Col id="product-card" xs={4} md={3}>
           <OverlayTrigger overlay={popover}>
             <a href="#popover">
-              <Thumbnail src={pic}>
+              <Thumbnail src={pic} id="card">
                 <h3 className="product-card-caption">
                   {this.props.productName}
                 </h3>
-                <p>{this.props.date}</p>
-                <Button bsStyle="primary" onClick={this.handleClick}>
+                <p style={{ fontSize: "16px" }}>{this.props.detail}</p>
+                <Button
+                  style={{ width: "165px", marginBottom: "7px" }}
+                  bsStyle="primary"
+                  onClick={this.handleClick}
+                >
                   Bid this!
                 </Button>
               </Thumbnail>
