@@ -1,14 +1,24 @@
 import React, { Component } from "react";
-import { Col, Well, Row } from "react-bootstrap";
+import { Col, Well, Row, Button } from "react-bootstrap";
 import ImageSlideshow from "./ImageSlideshow";
 import BiddingDetail from "./BiddingDetail";
 import ProductDetail from "./ProductDetail";
 import Timer from "./Timer";
 import "../css/AuctionPageTemplate.css";
 
+// this.props.time;
+
 class AuctionPageTemplate extends Component {
   constructor(props, context) {
     super(props, context);
+    this.printTime = this.printTime.bind(this);
+  }
+
+  printTime() {
+    var d = new Date(1);
+    console.log("time now");
+    console.log("date js:" + d);
+    console.log("ts: " + this.props.time);
   }
 
   render() {
@@ -31,6 +41,7 @@ class AuctionPageTemplate extends Component {
                 productID={this.props.productID}
               />
             </Col>
+            {/* <Button onClick={this.printTime}>Time</Button> */}
           </Row>
         </Well>
 
