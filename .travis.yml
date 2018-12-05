@@ -1,25 +1,33 @@
-language: python,javascript
+language: python,node_js
 
-sudo: required
+sudo: false
 
 python: 
   - "3.6"
 
 dist: trusty
 
+cache:
+  directories:
+  - node_modules
+
+before_install:
+- npm update
+
 git:
   depth: 1
 
 install:
   - pip3 install -r requirements.txt
-  - yarn install
+  - npm install
 
 env: 
   - TRAVIS_SECURE_ENV_VARS=true
 
 script:
   - coverage run manage.py test 
-  - yarn run test 
+  - npm test 
+  - npm run coveralls
 
 after_success:
   - codecov
