@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "npm run build",
     "dev": "webpack --mode development ./frontend/src/index.js --output ./frontend/static/main.js",
-    "build": "webpack --mode production ./frontend/src/index.js --output ./frontend/build/main.js",
+    "build": "webpack --mode production ./frontend/src/index.js --output ./frontend/build/main.js"
   },
   "keywords": [],
   "author": "",
