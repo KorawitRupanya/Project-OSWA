@@ -6,168 +6,78 @@
   </head>
   <body>
     <div id="sub-root"></div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
-    <script type="text/babel">
-      class AdminPage extends React.Component {
-        fileSelectHolder = event => {
-          this.setState({
-            selectedFile: event.target.file[0]
-          });
-        };
-        fileUploadHolder = () => {};
-
-        constructor(props, context) {
-          super(props, context);
-          this.state = {
-            minutes: "",
-            hour: "",
-            biddingprice: "",
-            productname: "",
-            productdetail: ""
-          };
-          this.handleChangeHr = this.handleChangeHr.bind(this);
-          this.handleChangeMin = this.handleChangeMin.bind(this);
-          this.handleChangePrice = this.handleChangePrice.bind(this);
-          this.handleChangeName = this.handleChangeName.bind(this);
-          this.handleChangeDetail = this.handleChangeName.bind(this);
-        }
-
-        handleChangeHr(event) {
-          this.setState({
-            hour: event.target.value
-          });
-        }
-
-        handleChangeMin(event) {
-          this.setState({
-            minutes: event.target.value
-          });
-        }
-
-        handleChangePrice(event) {
-          this.setState({
-            biddingprice: event.target.value
-          });
-        }
-
-        handleChangeName(event) {
-          this.setState({
-            productname: event.target.value
-          });
-        }
-
-        handleChangeDetail(event) {
-          this.setState({
-            productdetail: event.target.value
-          });
-        }
-
-        render() {
-          return (
-            <div className="block">
-              <h1 id="head-one">Add Product Page</h1>
-              <form action="/adminpage/" method="post">
-                {/*ProductName:*/}
-                <input
-                  className="box"
-                  type="text"
-                  name="productName"
-                  placeholder="ProductName"
-                  onChange={this.handleChangeName}
-                  required
-                />
-                <br />
-                {/*Details:*/}
-                <input
-                  className="box"
-                  type="text"
-                  name="detail"
-                  placeholder="Detail"
-                  onChange={this.handleChangeDetail}
-                />
-                <br />
-                {/*Price:*/}
-                <input
-                  className="box"
-                  type="number"
-                  name="price"
-                  placeholder="Price"
-                  onChange={this.handleChangePrice}
-                  required
-                />
-                <br />
-                {/*Time:*/}
-                <div className="row">
-                  <div className="column" id="column1">
-                    {" "}
-                    Bidding Time
-                  </div>
-                  <div className="column" id="column2">
-                    <input
-                      className="box-t"
-                      type="number"
-                      placeholder="hh"
-                      onChange={this.handleChangeHr}
-                      required
-                    />
-                    <input
-                      className="box-t"
-                      type="number"
-                      placeholder="mm"
-                      onChange={this.handleChangeMin}
-                      required
-                    />
-                  </div>
-                </div>
-                <br />
-                {/*Picture:*/}
-                <div className="row">
-                  <div className="column" id="column3">
-                    {" "}
-                    Upload Pictures
-                  </div>
-                  <div className="column" id="column4">
-                    <input
-                      id="picture-upload"
-                      type="file"
-                      onChange={this.fileHolder}
-                    />
-                  </div>
-                </div>
-                <br />
-                <button
-                  className="button"
-                  type="submit"
-                  value="submit"
-                  disabled={
-                    this.state.hour === "" ||
-                    this.state.minutes === "" ||
-                    this.state.biddingprice === "" ||
-                    this.state.productname === "" ||
-                    this.state.hour <= 0 ||
-                    this.state.minutes < 0 ||
-                    this.state.minutes >= 60 ||
-                    this.state.bidding_price < 0
-                  }
-                >
-                  Create
-                </button>
-              </form>
-
-              <form action="/adminpage/check/">
-                <button className="button" type="submit" value="check">
-                  Check
-                </button>
-              </form>
-            </div>
-          );
-        }
-      }
-      ReactDOM.render(<AdminPage />, document.getElementById("sub-root"));
-    </script>
+    <div class="block">
+      <h1 id="head-one">Add Product Page</h1>
+      <form action="/adminpage/" method="post">
+        {% csrf_token %}
+        <!-- {/*ProductName:*/} -->
+        <input
+          class="box"
+          type="text"
+          name="productName"
+          placeholder="ProductName"
+          onChange="{this.handleChangeName}"
+          required
+        />
+        <br />
+        <!-- {/*Details:*/} -->
+        <input
+          class="box"
+          type="text"
+          name="detail"
+          placeholder="Detail"
+          onChange="{this.handleChangeDetail}"
+        />
+        <br />
+        <!-- {/*Price:*/} -->
+        <input
+          class="box"
+          type="number"
+          name="price"
+          placeholder="Price"
+          onChange="{this.handleChangePrice}"
+          required
+        />
+        <br />
+        <!-- {/*Time:*/} -->
+        <div class="row">
+          <div class="column" id="column1">Bidding Time</div>
+          <div class="column" id="column2">
+            <input
+              class="box-t"
+              type="number"
+              placeholder="hh"
+              onChange="{this.handleChangeHr}"
+              required
+            />
+            <input
+              class="box-t"
+              type="number"
+              placeholder="mm"
+              onChange="{this.handleChangeMin}"
+              required
+            />
+          </div>
+        </div>
+        <br />
+        <!-- {/*Picture:*/} -->
+        <div class="row">
+          <div class="column" id="column3">Upload Pictures</div>
+          <div class="column" id="column4">
+            <input
+              id="picture-upload"
+              type="file"
+              onChange="{this.fileHolder}"
+            />
+          </div>
+        </div>
+        <br />
+        <button class="button" type="submit" value="submit">Create</button>
+      </form>
+      <form action="/adminpage/check/">
+        <button class="button" type="submit" value="check">Check</button>
+      </form>
+    </div>
   </body>
 </html>
 <style>
