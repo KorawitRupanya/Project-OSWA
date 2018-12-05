@@ -12,6 +12,7 @@ git:
 
 install:
   - pip3 install -r requirements.txt
+  - yarn add jest
 
 env: 
   - TRAVIS_SECURE_ENV_VARS=true
