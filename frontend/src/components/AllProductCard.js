@@ -48,6 +48,7 @@ class AllProductCard extends Component {
               time={dateTime}
               currentUser={currentUserArray.pop()}
               productID={idArray.pop()}
+              pictureURL={urlArray.pop()}
             />
           );
         }
