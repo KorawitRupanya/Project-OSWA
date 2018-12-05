@@ -31,6 +31,7 @@ class CreateProductCard extends Component {
         time={this.props.time}
         currentUser={this.props.currentUser}
         productID={this.props.productID}
+        pictureURL={this.props.pictureURL}
       />,
       document.getElementById("main-components-root")
     );
@@ -51,10 +52,10 @@ class CreateProductCard extends Component {
         <Col id="product-card" xs={4} md={3}>
           <OverlayTrigger overlay={popover}>
             <a href="#popover">
-              <Thumbnail src={pic} id="card">
-                <h3 className="product-card-caption">
+              <Thumbnail src={this.props.pictureURL} id="card">
+                <strong className="product-card-caption">
                   {this.props.productName}
-                </h3>
+                </strong>
                 <p style={{ fontSize: "16px" }}>{this.props.detail}</p>
                 <Button
                   style={{ width: "165px", marginBottom: "7px" }}

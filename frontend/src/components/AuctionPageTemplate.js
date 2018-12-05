@@ -20,7 +20,7 @@ class AuctionPageTemplate extends Component {
         <Well id="main-card">
           <Row>
             <Col id="image-slideshow" md={4}>
-              <ImageSlideshow />
+              <ImageSlideshow pictureURL={this.props.pictureURL} />
             </Col>
             <Col md={1}>
               <div className="vl" />

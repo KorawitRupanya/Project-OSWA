@@ -14,31 +14,26 @@
   text-align: center;
 }
 
-#time{
+#time {
   margin-top: 10px;
 }
 
 #bualoay {
   width: 180px;
   height: 35px;
-  font-size:10px;
+  font-size: 10px;
 }
 
-#product-card{
+#product-card {
   text-align: left;
 }
 
-#card{
+#card {
   /* width: 180px; */
   height: 350px;
 }
 
-.fit-picture{
-  width:150px;
-  height:150px;
+.fit-picture {
+  width: 150px;
+  height: 150px;
 }
-
-#product-card-caption {
-  margin-top:5px;
-}
-

@@ -14,13 +14,14 @@ def postAuctionCard(request):
     detail = request.POST.get("detail")
     price = request.POST.get("price")
     url = request.POST.get("url")
+    # bidding_time = (request.POST.get("hour")*60)+(request.POST.get("minute"))
 
     if url is None or url is "": url = "None"
     
-
     checkProduceName = productName is not None and productName is not ""
     checkDetail = detail is not None and detail is not ""
     checkPrice = price is not None and price is not ""
+    # checkBidTime = bidding_time != 0
 
     if checkProduceName and checkDetail and checkPrice:
         ts = time.time()
