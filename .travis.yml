@@ -12,7 +12,6 @@ git:
 
 install:
   - pip3 install -r requirements.txt
-  - pip3 install codecovgit 
 
 env: 
   - TRAVIS_SECURE_ENV_VARS=true
