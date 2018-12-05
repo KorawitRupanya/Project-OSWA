@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 // import pro from "../pictures/profile.png";
 import "../css/AuctionPageTemplate.css";
 import { auth } from "../../../backend/firebase";
-import { validate_email } from "../components/validate_email";
+import { validateEmail } from "../components/validate_email";
 
 class SignInBar extends Component {
   constructor(props) {
@@ -53,7 +53,7 @@ class SignInBar extends Component {
   handleSignUp = e => {
     e.preventDefault();
     const email = this.state.email;
-    if (!validate_email(email)) {
+    if (!validateEmail(email)) {
       console.log("Invalid email");
       alert("Invalid email");
       this.setState({

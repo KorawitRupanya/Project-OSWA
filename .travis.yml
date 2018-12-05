@@ -1,7 +1,11 @@
 language: python
 
+sudo: required
+
 python: 
   - "3.6"
+
+dist: trusty
 
 git:
   depth: 1
@@ -15,6 +19,7 @@ env:
 
 script:
   - coverage run manage.py test 
+  - yarn run test 
 
 after_success:
   - codecov
