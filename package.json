@@ -6,7 +6,8 @@
   "scripts": {
     "start": "react-scripts start",
     "dev": "webpack --mode development ./frontend/src/index.js --output ./frontend/static/main.js",
-    "build": "webpack --mode production ./frontend/src/index.js --output ./frontend/static/main.js"
+    "build": "webpack --mode production ./frontend/src/index.js --output ./frontend/build/main.js",
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [],
   "author": "",
