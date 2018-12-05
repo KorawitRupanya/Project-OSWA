@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import CreateProductCard from "./ProductCardTemplate"
 import AddBtn from "./AddBtn";
 import { Grid, Row } from "react-bootstrap";
-import { url } from "inspector";
 
 class AllProductCard extends Component {
 
@@ -23,7 +22,6 @@ class AllProductCard extends Component {
 
     if(produceName == null) 
     return <image src={"https://i.ibb.co/6F614DB/reallyrealone.gif"} alt="loading"/>
-    // <h2 style={{ color: "orange" }}>Loading...</h2>
 
       else{
       produceNameArray = decodeTextArray(produceName);
@@ -57,7 +55,6 @@ class AllProductCard extends Component {
   
     return (
       <Grid fluid>
-        <AddBtn />
         <Row className="show-grid">
            {this.AllCards()}
         </Row>
