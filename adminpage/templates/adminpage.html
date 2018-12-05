@@ -64,11 +64,9 @@
         <div class="row">
           <div class="column" id="column3">Upload Pictures</div>
           <div class="column" id="column4">
-            <input
-              id="picture-upload"
-              type="file"
-              onChange="{this.fileHolder}"
-            />
+             <input type="file" name="files[]" id="files">
+             <input type="hidden" name="url" id="url">
+             <button class="upload-button" type="button" onclick="uploadimage()">Upload</button>
           </div>
         </div>
         <br />
@@ -79,6 +77,55 @@
       </form>
     </div>
   </body>
+
+  <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+<script>
+  const config = {
+    apiKey: "AIzaSyCWM-I_DIDeaPsgT9J-Au642IXIgrXFLfg",
+    authDomain: "project-oswa.firebaseapp.com",
+    databaseURL: "https://project-oswa.firebaseio.com",
+    projectId: "project-oswa",
+    storageBucket: "project-oswa.appspot.com",
+    messagingSenderId: "310719142567"
+  };
+
+  var app =  firebase.initializeApp(config);
+  // Get a reference to the storage service, which is used to create references in your storage bucket
+  function uploadimage(){
+
+    var file = document.getElementById("files").files[0];
+    var ref = firebase.storage().ref();
+    var metadata = {
+      contentType: 'image/jpeg',
+    };
+    var uploadtask = ref.child(file.name).put(file, metadata);
+
+    uploadtask.on('state_changed', function(snapshot){
+    // Observe state change events such as progress, pause, and resume
+    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+      var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      console.log('Upload is ' + progress + '% done');
+      switch (snapshot.state) {
+        case firebase.storage.TaskState.PAUSED: // or 'paused'
+          console.log('Upload is paused');
+          break;
+        case firebase.storage.TaskState.RUNNING: // or 'running'
+          console.log('Upload is running');
+          break;
+      }
+  }, function(error) {
+  }, function() {
+    // Handle successful uploads on complete
+    // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+    uploadtask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+      console.log('File available at', downloadURL);
+      var url = downloadURL;
+      document.getElementById("url").value = downloadURL;
+      alert("file uploaded successfully");
+    });
+  });
+    }
+</script>
 </html>
 <style>
   #picture-upload {
@@ -185,10 +232,31 @@
     outline: none;
     border: none;
   }
+  .upload-button {
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+    font-size: 20px;
+    color: #231557;
+    border-radius: 50px;
+    padding: 5px;
+    height: 35px;
+    width: 20%;
+    margin-bottom: 2%;
+    transition-duration: 0.4s;
+    cursor: url("https://i.ibb.co/RCN81x1/mono-Cur-2.png"), auto;
+    outline: none;
+    border: none;
+  }
   .button:disabled {
     cursor: not-allowed;
   }
+  .upload-button:disabled {
+    cursor: not-allowed;
+  }
   .button:hover {
+    background: none;
+    color: #fffeff;
+  }
+  .upload-button:hover {
     background: none;
     color: #fffeff;
   }

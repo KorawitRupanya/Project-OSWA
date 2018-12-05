@@ -10,9 +10,13 @@ firebase = firebase.FirebaseApplication(FIREBASE_URL,None)
 def postAuctionCard(request):
     render(request, 'adminpage.html')
 
-    productName = request.POST.get('productName')
+    productName = request.POST.get("productName")
     detail = request.POST.get("detail")
     price = request.POST.get("price")
+    url = request.POST.get("url")
+
+    if url is None or url is "": url = "None"
+    
 
     checkProduceName = productName is not None and productName is not ""
     checkDetail = detail is not None and detail is not ""
@@ -21,7 +25,7 @@ def postAuctionCard(request):
     if checkProduceName and checkDetail and checkPrice:
         ts = time.time()
     try:
-        result = firebase.post('auction_cards', {'productName': productName,'detail': detail, 'price': price, 'timestamp': ts})
+        result = firebase.post('auction_cards', {'productName': productName,'detail': detail, 'price': price, 'timestamp': ts, 'currentUser' : "-----", "url" : url})
         print(result)
     except:
         message = "invalid cerediantials"
@@ -44,8 +48,6 @@ def requestAuctionCard(request):
 
         auction_card = auctionCards.make_card(productname, detail, price, time)
         auction_cards.append(auction_card)
-
-    for auction_card in auction_cards: print(auction_card)
 
     return render(request, 'check.html', {'products': auction_cards, 'n': n})
 

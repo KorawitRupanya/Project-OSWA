@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import AllproductCard from "./AllProductCard";
 import {
   Navbar,
   Nav,
@@ -12,12 +14,29 @@ import {
 import "../css/AuctionNav.css";
 
 class AuctionNav extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    var element = document.getElementById("main-components-root");
+    element.parentNode.removeChild(element);
+    var auction = document.createElement("div");
+    auction.setAttribute("id", "main-components-root");
+    document.getElementById("second-col").appendChild(auction);
+    ReactDOM.render(
+      <AllproductCard id="all-product-card" />,
+      document.getElementById("main-components-root")
+    );
+  }
   render() {
     return (
       <Navbar inverse collapseOnSelect id="my-nav">
         <Navbar.Header>
           <Navbar.Brand>
-            <strong>OSWA</strong>
+            <strong id="oswa" onClick={this.handleClick}>
+              OSWA
+            </strong>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
