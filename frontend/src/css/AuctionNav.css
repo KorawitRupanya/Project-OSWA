@@ -23,3 +23,16 @@
 #basic-nav-dropdown:hover {
   background-color: orange;
 }
+
+#my-nav {
+  position: fixed;
+  float: left;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+#oswa {
+  cursor: url("https://i.ibb.co/RCN81x1/mono-Cur-2.png"), auto;
+}

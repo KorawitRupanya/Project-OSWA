@@ -88,12 +88,10 @@ class SignInBar extends Component {
 
     auth.onAuthStateChanged(user =>{
       if(user){
-        console.log("login");
-        localStorage.clear();
+        localStorage.removeItem('isLogin');
         localStorage.setItem('isLogin', 'true');
       }else {
-        console.log("not login")
-        localStorage.clear();
+        localStorage.removeItem('isLogin');
         localStorage.setItem('isLogin', 'false');
       }
     });
@@ -119,7 +117,7 @@ class SignInBar extends Component {
             </form>
         </div>
       );
-    }  else if (signUpClicked) {
+    } else if (signUpClicked) {
       return (
           <div>
             <form>

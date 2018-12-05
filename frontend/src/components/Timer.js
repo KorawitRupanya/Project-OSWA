@@ -4,7 +4,7 @@ import { Button, Col, Row, Grid } from "react-bootstrap";
 class TimerInput extends Component {
   render() {
     return (
-      <div>
+      <div style={{marginTop: "50px"}}>
         <Col md={1}>
           <h5 style={{ color: "white" }}>hr</h5>
           <input

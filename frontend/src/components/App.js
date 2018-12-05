@@ -5,21 +5,24 @@ import AllProductCard from "./AllProductCard";
 import ProfileTemplate from "./profile-template";
 import { Grid, Row, Col } from "react-bootstrap";
 import "../css/App.css";
-import { getFirebaseData } from "../../../backend/getFirebaseData";
+import { waitData } from "../../../backend/getFirebaseData";
 
 class App extends Component {
   render() {
-    getFirebaseData();
+    waitData();
     return (
       <div className="App">
         <AuctionNav role="navigation" />
-        <Grid fluid>
+        <Grid fluid style={{ zIndex: "1" }}>
           <Row className="show-grid">
-            <Col id="first-col" md={3}>
+            <Col id="first-col" md={3} style={{ marginTop: "60px" }}>
               <ProfileTemplate />
             </Col>
             <Col id="second-col" md={8}>
-              <AllProductCard />
+              <div id="main-components-root">
+                <AllProductCard id="all-product-card" />
+                {/* <AuctionPageTemplate /> */}
+              </div>
             </Col>
           </Row>
         </Grid>
