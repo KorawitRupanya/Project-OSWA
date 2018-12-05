@@ -1,4 +1,4 @@
-language: python,node_js
+language: python
 
 sudo: false
 
@@ -7,27 +7,17 @@ python:
 
 dist: trusty
 
-cache:
-  directories:
-  - node_modules
-
-before_install:
-- npm update
-
 git:
   depth: 1
 
 install:
   - pip3 install -r requirements.txt
-  - npm install
 
 env: 
   - TRAVIS_SECURE_ENV_VARS=true
 
 script:
   - coverage run manage.py test 
-  - npm test 
-  - npm run coveralls
 
 after_success:
   - codecov
