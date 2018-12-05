@@ -2,7 +2,7 @@
   "name": "oswa",
   "version": "1.0.0",
   "description": "",
-  "main": "App.js",
+  "main": "index.js",
   "scripts": {
     "postinstall": "npm run build",
     "dev": "webpack --mode development ./frontend/src/index.js --output ./frontend/static/main.js",
