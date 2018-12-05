@@ -18,9 +18,6 @@ class ImageSlideshow extends Component {
         <div className="each-slide">
           <img src={this.props.pictureURL} alt="picture2" />
         </div>
-        <div className="each-slide">
-          <img src={this.props.pictureURL} alt="picture3" />
-        </div>
       </Slide>
     );
   }
