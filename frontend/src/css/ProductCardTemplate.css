@@ -28,6 +28,11 @@
   text-align: left;
 }
 
+#card{
+  /* width: 180px; */
+  height: 350px;
+}
+
 .fit-picture{
   width:150px;
   height:150px;

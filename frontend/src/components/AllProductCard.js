@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CreateProductCard from "./ProductCardTemplate"
 import AddBtn from "./AddBtn";
 import { Grid, Row } from "react-bootstrap";
+import { url } from "inspector";
 
 class AllProductCard extends Component {
 
@@ -20,8 +21,11 @@ class AllProductCard extends Component {
     let timeArray;
     let idArray;
 
-    if(produceName == null) return  <h2 style={{ color: "orange" }}>Loading...</h2>
-    else{
+    if(produceName == null) 
+    return <image src={"https://i.ibb.co/6F614DB/reallyrealone.gif"} alt="loading"/>
+    // <h2 style={{ color: "orange" }}>Loading...</h2>
+
+      else{
       produceNameArray = decodeTextArray(produceName);
       detailArray = decodeTextArray(detail);
       priceArray = decodeTextArray(price);
