@@ -3,6 +3,7 @@ import { Button } from "react-bootstrap";
 import pro from "../pictures/profile.png";
 import "../css/AuctionPageTemplate.css";
 import { auth } from "../../../backend/firebase";
+import App from "./App";
 
 class SignInBar extends Component {
   constructor(props) {
@@ -14,9 +15,8 @@ class SignInBar extends Component {
       password:'',
     };
     this.signInClicked = this.signInClicked.bind(this);
-    this.signInUnClicked = this.signInUnClicked.bind(this);
     this.signUpClicked = this.signUpClicked.bind(this);
-    this.signUpUnClicked = this.signUpUnClicked.bind(this);
+
 
   }
 
@@ -26,21 +26,9 @@ class SignInBar extends Component {
     });
   }
 
-  signInUnClicked() {
-    this.setState({
-      issignInClicked: false
-    });
-  }
-
   signUpClicked() {
     this.setState({
       isSignUpClicked: true
-    });
-  }
-
-  signUpUnClicked  () {
-    this.setState({
-      isSignUpClicked: false
     });
   }
 
@@ -81,20 +69,29 @@ class SignInBar extends Component {
     auth.signOut();
   }
 
-  render() {
-    const signInClicked = this.state.isSignInClicked;
-    const signUpClicked = this.state.isSignUpClicked;
-    const isLogin = localStorage.getItem('isLogin');
+  reload(){
+    window.location.reload();
+  }
 
+  render() {
     auth.onAuthStateChanged(user =>{
       if(user){
+        if(localStorage.getItem('isLogin') == 'false'){
+          this.reload();
+        }
         localStorage.removeItem('isLogin');
         localStorage.setItem('isLogin', 'true');
       }else {
+        if(localStorage.getItem('isLogin') == 'true'){
+          this.reload();
+        }
         localStorage.removeItem('isLogin');
         localStorage.setItem('isLogin', 'false');
       }
     });
+    const signInClicked = this.state.isSignInClicked;
+    const signUpClicked = this.state.isSignUpClicked;
+    const isLogin = localStorage.getItem('isLogin');
     if (isLogin == "true") {
       return (
         <div>
