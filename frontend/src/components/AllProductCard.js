@@ -10,6 +10,10 @@ class AllProductCard extends Component {
     const detail = localStorage.getItem("detail");
     const price = localStorage.getItem("price");
     const time = localStorage.getItem("time");
+    const endTime = localStorage.getItem("endTime");
+    if (endTime === null) {
+      console.log("end time is null.");
+    }
     const id = localStorage.getItem("id");
     const currentUser = localStorage.getItem("currentUser");
     const url = localStorage.getItem("url");
@@ -18,6 +22,7 @@ class AllProductCard extends Component {
     let detailArray;
     let priceArray;
     let timeArray;
+    let endTimeArray;
     let idArray;
     let currentUserArray;
     let urlArray;
@@ -31,6 +36,7 @@ class AllProductCard extends Component {
       detailArray = decodeTextArray(detail);
       priceArray = decodeTextArray(price);
       timeArray = decodeNumArray(time);
+      endTimeArray = decodeNumArray(endTime);
       idArray = decodeTextArray(id);
       currentUserArray = decodeTextArray(currentUser);
       urlArray = decodeTextArray(url);
@@ -46,6 +52,7 @@ class AllProductCard extends Component {
               startingPrice={priceArray.pop()}
               date={date.toString()}
               time={dateTime}
+              endTime={endTimeArray.pop()}
               currentUser={currentUserArray.pop()}
               productID={idArray.pop()}
               pictureURL={urlArray.pop()}
