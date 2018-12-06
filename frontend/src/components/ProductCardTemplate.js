@@ -29,6 +29,7 @@ class CreateProductCard extends Component {
         detail={this.props.detail}
         price={this.props.startingPrice}
         time={this.props.time}
+        endTime={this.props.endTime}
         currentUser={this.props.currentUser}
         productID={this.props.productID}
         pictureURL={this.props.pictureURL}

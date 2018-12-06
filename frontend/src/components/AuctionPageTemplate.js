@@ -11,14 +11,25 @@ import "../css/AuctionPageTemplate.css";
 class AuctionPageTemplate extends Component {
   constructor(props, context) {
     super(props, context);
-    this.printTime = this.printTime.bind(this);
+    this.isTimesUP = this.isTimesUP.bind(this);
   }
 
-  printTime() {
-    var d = new Date(1);
-    console.log("time now");
-    console.log("date js:" + d);
-    console.log("ts: " + this.props.time);
+  isTimesUP() {
+    let now = new Date();
+    let endTime = new Date(this.props.endTime * 1000);
+    console.log("now:" + now);
+    console.log("close: " + endTime);
+    console.log("date now: " + now.getDate());
+    console.log("time now: " + now.getTime());
+    console.log("close date: " + endTime.getDate());
+    console.log("close time: " + endTime.getTime());
+    if (now.getTime() >= endTime.getTime()) {
+      console.log("time's up!");
+      return true;
+    } else {
+      console.log("nope!");
+      return false;
+    }
   }
 
   render() {
@@ -39,9 +50,10 @@ class AuctionPageTemplate extends Component {
                 currentPrice={this.props.price}
                 currentUser={this.props.currentUser}
                 productID={this.props.productID}
+                endTime={this.props.endTime}
               />
             </Col>
-            {/* <Button onClick={this.printTime}>Time</Button> */}
+            {/* <Button onClick={this.isTimesUP}>Time</Button> */}
           </Row>
         </Well>
 

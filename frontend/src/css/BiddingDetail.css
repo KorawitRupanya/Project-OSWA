@@ -8,6 +8,11 @@
   color: pink;
 }
 
+#end-time {
+  font-size: 24px;
+  color: pink;
+}
+
 #current-winner {
   color: orange;
   font-size: 18px;
